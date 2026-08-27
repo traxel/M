@@ -23,3 +23,13 @@ Persistente Notizen für die Zusammenarbeit mit Mariana (Sometra).
   keine Wiederholung dessen, was schon in den Dokumenten steht. Ergebnis,
   Zahlen, offene Entscheidung — mehr nicht. Ausführliches gehört ins Dokument,
   nicht in die Antwort.
+
+## Arbeitsweise
+
+- **Kein Vorschlag ohne vorherige Prüfung** (Stand: 2026-08-27). Bevor etwas
+  vorgeschlagen wird, ist zu belegen, dass es technisch geht — bevorzugt durch
+  den Aufruf des Werkzeugs selbst, sonst durch die Doku des Anbieters. Ist
+  eine Prüfung nicht möglich, wird die Annahme ausdrücklich als ungeprüft
+  benannt. Stand der Prüfungen und offene Annahmen: `verifiziert.md`.
+- Herstellerdokus sind aus der Remote-Umgebung nicht erreichbar
+  (Egress-Proxy). Verifikation läuft über Websuche oder direkten Tool-Aufruf.
