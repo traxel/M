@@ -9,8 +9,14 @@ Sprache der Quellen: zunächst nur Englisch.
 
 Zwei Agenten im Content-System:
 
-1. **Recherche-Agent** — was funktioniert draußen, und warum (dieses Dokument)
-2. **Content-Agent** — Kern + Zweig Text (LinkedIn) / Zweig Video (`agenten/content-agent.md`)
+1. **Recherche-Agent** — was funktioniert draußen, und warum (dieses Dokument).
+   Zwei Läufe auf einer Ablage: YouTube über die API, LinkedIn über den
+   bestehenden Browser-Weg der Akquise-Agenten.
+2. **Content-Agent** — Kern + Zweig Text (LinkedIn) / Zweig Video
+   (`agenten/content-agent.md`)
+
+Der Workshop bleibt bei fünf Agenten. Die zwei Zweige betreffen nur das
+Content-System.
 
 ---
 
@@ -63,26 +69,70 @@ mit Zeitstempel-Link. Die ersten 30 Sekunden werden angesehen und diktiert —
 
 ---
 
-## LinkedIn: keine API, also anders
+## LinkedIn: eigener Scanner über den bestehenden Weg
 
-Es gibt keinen offiziellen Weg, fremde LinkedIn-Posts in Menge auszulesen.
-Scraping verstößt gegen die Nutzungsbedingungen und führt zu Kontobeschränkungen —
-und widerspricht der eigenen Regel aus dem Workshop: kein Agent bedient ein Konto
-automatisiert.
+Es gibt keine offizielle API für fremde Beiträge. Aber die Akquise-Agenten
+erreichen LinkedIn-Profile bereits — derselbe Weg, dieselbe Sitzung. Ein
+Content-Scanner ist kein neues Verfahren, sondern eine zweite Auswertung auf
+demselben Zugang.
 
-**Praktikabler Weg, dreistufig:**
+Also gebaut, aber begrenzt.
 
-1. **Kuratierte Liste.** 20–30 englischsprachige Accounts, denen bewusst gefolgt wird.
-   Der Feed wird damit zum Filter, nicht die Suche.
-2. **Manuelles Einsammeln.** Was auffällt, wird gespeichert. Einmal pro Woche
-   werden die gespeicherten Posts als Text in den Agenten gegeben.
-   Aufwand: ~15 Minuten.
-3. **Eigene Zahlen automatisch.** Für den eigenen Account gibt es den
-   Analytics-Export. Was bei Sometra selbst funktioniert, ist das verlässlichste
-   Signal — und das einzige mit echten Zahlen.
+### Was der Scanner tut
 
-Ehrliche Konsequenz: **YouTube wird automatisiert, LinkedIn wird begleitet.**
-Wer etwas anderes verspricht, verspricht ein gesperrtes Konto.
+1. Liest die Tabelle `Quellen`, Plattform LinkedIn — Personen, denen bewusst
+   gefolgt wird
+2. Öffnet die Beitragsübersicht des Profils, liest die letzten Beiträge
+3. Ermittelt je Beitrag: Text, Datum, Reaktionen, Kommentare, Format
+   (Text / Bild / Karussell / Video / Dokument)
+4. Berechnet die Outlier-Ratio gegen den Median derselben Person
+5. Legt Outlier als Datensatz in `Beiträge` an
+
+Er schreibt nichts, er reagiert nicht, er vernetzt nicht. Nur lesen.
+Die Regel „kein Agent klickt auf Senden" bleibt unberührt — Lesen ist die
+risikoärmere Hälfte.
+
+### Kennzahl auf LinkedIn
+
+Views gibt es für fremde Beiträge nicht. Ersatz:
+
+```
+Interaktion = Reaktionen + (3 × Kommentare)
+Outlier-Ratio = Interaktion ÷ Median der letzten 20 Beiträge derselben Person
+```
+
+Kommentare zählen dreifach: sie kosten den Leser mehr und sind schwerer zu
+bekommen als ein Daumen.
+
+### Grenzen, damit das Konto ruhig bleibt
+
+Nicht die Handlung führt zu Beschränkungen, sondern die Menge und das Tempo.
+
+| | |
+|---|---|
+| Quellen gesamt | max. 30 |
+| Lauf | 1× pro Woche, nicht täglich |
+| Profile je Lauf | max. 10 |
+| Beiträge je Profil | die letzten 5 |
+| Tempo | menschlich, mit Pausen, nacheinander |
+| Reichweite | nur Personen, denen gefolgt wird oder mit denen Vernetzung besteht |
+| Terminlage | **nicht am selben Tag wie ein großer Akquise-Lauf** |
+
+Der letzte Punkt ist der wichtige: Akquise-Agenten und Content-Scanner laufen
+über dasselbe Konto. Die Last addiert sich. Getrennte Tage, nicht getrennte
+Agenten, lösen das.
+
+### Zusätzlich, ohne jedes Risiko
+
+Der eigene Analytics-Export. Was bei Sometra selbst funktioniert, ist das
+einzige Signal mit echten Zahlen und gehört in dieselbe Tabelle.
+
+### Für den Workshop gilt etwas anderes
+
+Im Workshop wird die kuratierte Variante gezeigt, nicht der automatisierte
+Scanner. Eigenes Konto, eigenes Risiko, geringe Menge — das ist eine
+Entscheidung, die jeder für sich trifft. Zwölf Teilnehmern gleichzeitig
+beizubringen, Profile automatisiert abzugreifen, ist eine andere Sache.
 
 ---
 
@@ -186,8 +236,10 @@ Formate reisen. Behauptungen nicht.
 
 ## Zu entscheiden
 
-1. **Trifft "nur zwei Agenten" das Content-System (Recherche + Erstellung) —
-   oder soll auch der Workshop von fünf auf zwei Agenten runter?**
-   Angenommen ist hier Ersteres.
-2. Ablage: Airtable wie bei der Akquise, oder ein Sheet?
-3. Lauf wöchentlich an einem festen Tag — welcher?
+1. Fester Wochentag für den YouTube-Lauf und für den LinkedIn-Lauf —
+   und die müssen auseinanderliegen, siehe Terminlage oben.
+2. Startliste LinkedIn: 20–30 englischsprachige Accounts. Kommt aus dem ersten
+   Lauf plus deiner eigenen Auswahl.
+3. Ob `Muster` eine eigene Tabelle bleibt oder eine Ansicht auf `Beiträge` ist.
+   Empfehlung: erst als Ansicht starten, Tabelle nur wenn die Bewertung
+   ausufert.
