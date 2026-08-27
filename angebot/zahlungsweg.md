@@ -232,45 +232,53 @@ Rechnung, und die Vorgabe „Zahlung bei Buchung" bleibt bestehen.
 
 ---
 
-## Umsatzsteuer — korrigiert am 27.08.
+## Umsatzsteuer: Reverse-Charge — entschieden am 27.08.
 
-> **Meine frühere Aussage war falsch.** Ich hatte geschrieben, das sei „der
-> einfache Fall: 19 % deutsche Umsatzsteuer". Das galt unter der Annahme,
-> Sometra sei ein deutsches Unternehmen. Sometra ist zypriotisch. Damit ist
-> es der komplizierte Fall.
+Sometra ist zypriotisch. Mariana hat entschieden: **Reverse-Charge, keine
+Umsatzsteuer auf der Rechnung.** Der Workshop wird damit als sonstige
+Leistung nach der B2B-Grundregel behandelt (Art. 44 MwStSystRL), nicht als
+Eintrittsberechtigung zu einer Veranstaltung.
 
-Eine zypriotische Gesellschaft veranstaltet einen Präsenz-Workshop in
-Deutschland für deutsche Firmenkunden. Welche Umsatzsteuer auf die Rechnung
-gehört, hängt an einer Weiche, die ich nicht entscheiden kann:
+Ich hatte die Gegenmöglichkeit einmal benannt — Art. 53 MwStSystRL, bei dem
+ein offenes Seminar am Veranstaltungsort besteuert würde und eine deutsche
+Registrierung nötig wäre. Die Entscheidung ist gefallen, hier steht sie als
+Grundlage. **Keine Steuerberatung.**
 
-| Einordnung | Folge |
+### Was daraus folgt — und was jetzt zu tun ist
+
+**Die gute Nachricht:** Keine umsatzsteuerliche Registrierung in
+Deutschland. Das hätte Wochen gedauert, und die Termine liegen in neun.
+
+**Drei Dinge, die dranhängen:**
+
+| Was | Warum |
 |---|---|
-| **Eintrittsberechtigung zu einer Veranstaltung** (Art. 53 MwStSystRL, § 3a Abs. 3 Nr. 5 UStG) | Leistungsort ist der Veranstaltungsort. **Deutsche Umsatzsteuer**, und eine zypriotische Gesellschaft braucht dafür eine **umsatzsteuerliche Registrierung in Deutschland** samt Voranmeldungen. Kein Reverse-Charge — die Regel ist von der B2B-Grundregel ausdrücklich ausgenommen |
-| **Sonstige Leistung nach der B2B-Grundregel** (Art. 44 MwStSystRL, § 3a Abs. 2 UStG) | Leistungsort ist der Sitz des Kunden. **Reverse-Charge**: Nettorechnung mit Hinweis auf die Steuerschuldnerschaft des Leistungsempfängers, keine deutsche Registrierung nötig |
+| **USt-IdNr. des Kunden ist Pflichtfeld bei der Buchung** | Reverse-Charge greift nur gegenüber einem Unternehmer mit gültiger Umsatzsteuer-Identifikationsnummer. Ohne gültige Nummer trägt Sometra die Steuer selbst |
+| **Nummer vor der Rechnung prüfen** | Über das MIAS-/VIES-Verfahren der EU. Eine ungültige oder erloschene Nummer fällt sonst erst bei der Prüfung auf, und dann zahlt Sometra |
+| **Pflichthinweis auf der Rechnung** | „Steuerschuldnerschaft des Leistungsempfängers" bzw. „Reverse charge". Fehlt der Hinweis, ist die Rechnung unvollständig |
 
-Ein offenes Seminar, bei dem einzelne Personen aus verschiedenen Firmen
-einen Platz kaufen, sieht der ersten Zeile sehr ähnlich. Ein Inhouse-Tag für
-ein Unternehmen der zweiten.
+Dazu die **Zusammenfassende Meldung** in Zypern für die
+innergemeinschaftlichen Dienstleistungen. Rhythmus und Form klärt der
+zypriotische Steuerberater.
 
-**Das ist keine Steuerberatung, und ich kann es nicht auflösen.** Es ist
-aber die Frage, die vor dem ersten verkauften Platz beantwortet sein muss,
-weil davon abhängt:
+### Was das für die Landingpage bedeutet
 
-- ob eine deutsche Steuernummer gebraucht wird, und wie lange deren
-  Beantragung dauert — das kann Wochen dauern und die Termine liegen in
-  neun Wochen
-- was auf der Rechnung steht
-- **was auf der Landingpage steht.** Dort steht heute „2.356 € netto,
-  zzgl. USt.". Bei Reverse-Charge wäre das für einen deutschen Firmenkunden
-  irreführend, weil er dann keine Umsatzsteuer an Sometra zahlt, sondern
-  selbst abführt
+Dort steht heute: **„2.356 € netto, zzgl. USt."** und **„je Person · netto,
+zzgl. USt."**
 
-Zufällig hilft eine Kleinigkeit: Zypern und Deutschland haben beide 19 %
-Regelsteuersatz. Optisch fällt der Unterschied nicht auf. Rechtlich ist er
-trotzdem da.
+Das stimmt bei Reverse-Charge nicht mehr — der deutsche Firmenkunde zahlt
+2.356 € an Sometra und führt die Steuer selbst ab. Richtig wäre:
 
-**Nächster Schritt: mit dem Steuerberater klären, ob Eintrittsberechtigung
-oder Grundregel.** Vorher keine Rechnung schreiben.
+> **2.356 €** · zzgl. USt. im Reverse-Charge-Verfahren
+> Steuerschuldnerschaft des Leistungsempfängers. Angebot nur für Unternehmen
+> mit gültiger USt-IdNr.
+
+**Nicht geändert — die Landingpage wird nur auf Ansage angefasst.**
+
+Nebenwirkung, die zur Sache passt: Der Satz „Angebot nur für Unternehmen mit
+gültiger USt-IdNr." erledigt gleichzeitig § 1 Absatz 2 der AGB, der
+Verbraucher ausschließt. Ohne diesen Ausschluss gäbe es ein
+14-tägiges Widerrufsrecht, und die 48-Stunden-Regel wäre wertlos.
 
 ---
 
@@ -285,11 +293,12 @@ oder Grundregel.** Vorher keine Rechnung schreiben.
 Zulässig sind nur strukturierte Formate nach EN 16931, also XRechnung oder
 ZUGFeRD. **Eine PDF-Rechnung reicht dafür nicht.**
 
-**Achtung, seit dem Hinweis auf die zypriotische Gesellschaft unklar:**
-Die deutsche E-Rechnungspflicht knüpft an die Ansässigkeit im Inland an.
-Eine zypriotische Gesellschaft ohne deutsche Betriebsstätte fällt
-voraussichtlich **nicht** darunter — dann sind die Fristen unten für Sometra
-gegenstandslos. Gehört in dieselbe Frage an den Steuerberater.
+**Für Sometra vermutlich gegenstandslos.** Die deutsche E-Rechnungspflicht
+knüpft an die Ansässigkeit im Inland an. Eine zypriotische Gesellschaft ohne
+deutsche Betriebsstätte fällt nicht darunter. Mit der Reverse-Charge-
+Entscheidung entfällt auch die deutsche Registrierung, die daran etwas
+hätte ändern können. Die Fristen unten stehen nur noch der Vollständigkeit
+halber da.
 
 **Für Sometra konkret** (Stand 27.08.: Jahresumsatz unter 60.000 €):
 

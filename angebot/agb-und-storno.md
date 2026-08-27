@@ -83,8 +83,13 @@ der Rechnung annimmt.
 
 ### § 3 Preis und Zahlung
 
-(1) Der Teilnahmepreis beträgt **2.356 € netto** je Person, zuzüglich der
-gesetzlichen Umsatzsteuer.
+(1) Der Teilnahmepreis beträgt **2.356 €** je Person.
+
+(1a) Die Leistung wird im **Reverse-Charge-Verfahren** abgerechnet. Die
+Steuerschuldnerschaft geht auf den Leistungsempfänger über. Der Teilnehmer
+teilt Sometra bei der Buchung seine **gültige
+Umsatzsteuer-Identifikationsnummer** mit. Ohne gültige Nummer kommt kein
+Vertrag zustande.
 
 (2) Der Preis ist **innerhalb von sieben Kalendertagen ab Rechnungsdatum**
 und in jedem Fall vor Veranstaltungsbeginn per Überweisung zu zahlen.
@@ -235,7 +240,8 @@ wirksam.
 | ~~Gerichtsstand~~ | **erledigt: Zypern.** Stadt noch eintragen. Folgen siehe oben |
 | **Rechtswahl: deutsches oder zypriotisches Recht?** | Blockiert die Prüfung. Der Entwurf ist auf deutschem Recht gebaut |
 | **Vollständige Firmierung, Registernummer, Sitz, USt-IdNr.** | Gehört in § 1 und ins Impressum |
-| **Umsatzsteuer: Eintrittsberechtigung oder Grundregel?** | Entscheidet über deutsche Registrierung und über den Preistext auf der Seite |
+| ~~Umsatzsteuer~~ | **entschieden 27.08.: Reverse-Charge.** USt-IdNr. wird Pflichtfeld bei der Buchung und ist vor der Rechnung zu prüfen |
+| **Preistext auf der Landingpage** | Dort steht noch „zzgl. USt." — bei Reverse-Charge falsch. Wartet auf Marianas Ansage |
 | **Sind 48 Stunden ab Rechnung gemeint oder ab Buchung?** | Der Entwurf sagt: ab Rechnung. Das ist die einzige Fassung, die mit der 7-Tage-Zahlungsfrist zusammenpasst |
 | **Ersatzteilnehmer-Klausel behalten?** | Empfehlung: ja. Sie kostet nichts und nimmt fast jeder Absage die Schärfe |
 
