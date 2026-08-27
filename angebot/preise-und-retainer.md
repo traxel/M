@@ -9,25 +9,22 @@ Status: Vorschlag zur Freigabe
 
 | Stufe | Inhalt | Umfang | Preis |
 |---|---|---|---|
-| Erstgespräch | Vorhaben klären, Machbarkeit einschätzen | 45 Min | kostenlos |
-| **S1 — Plattform-Schulung** | Aufbau, Grenzen, Projektstruktur, erste Anwendung | 4 h je Plattform | **2.500 €** |
-| **S2 — Umsetzungstag** | Erstes echtes Projekt wird live gebaut | 1 Tag / 6 h | **2.500 €** |
-| **Paket S1 + S2** | Schulung + Umsetzungstag | 2 Termine | **4.500 €** |
+| Live-Session | Ein Agent, live gebaut | 30 Min | kostenlos |
+| **Workshop "5 Agenten" — Pilot** | 5 Agenten, jeder baut mit | 1 Tag, 8 Plätze | **490 € / Person** |
+| **Workshop "5 Agenten"** | 5 Agenten, jeder baut mit | 1 Tag, max. 12 Plätze | **890 € / Person** |
+| **Workshop in-house** | dasselbe für ein Unternehmen | 1 Tag, bis 8 Teilnehmer | **4.900 € flat** |
 | **R1 — Begleitung** | Ein Projekt bis es läuft | 1–3 Monate | **1.800 € / Monat** |
 | **R2 — Systemaufbau** | Komplexes Vorhaben | 6 Monate | **3.500 € / Monat** |
 
 Reisekosten separat. Alles remote möglich.
 
----
+Funnel, Reihenfolge und Garantie: `funnel/funnel.md`.
+Inhalt und Ablauf des Workshops: `funnel/workshop-5-agenten.md`.
 
-## Warum das Paket S1+S2 der Default sein muss
-
-Einzeln verkauft wird S2 zur Option — und Optionen werden verschoben.
-Als Paket ist der Umsetzungstag gesetzt, und damit ist gesetzt, dass nach der
-Schulung etwas läuft. 500 € Nachlass sind der Preis dafür, dass die Schulung
-nicht folgenlos bleibt.
-
-S2 wird nicht separat beworben. Er ist Teil des Angebots, nicht ein Upsell.
+**Ersetzt:** die frühere Trennung in S1 Plattform-Schulung (2.500 €) und
+S2 Umsetzungstag (2.500 €). Die Trennung war künstlich — im Workshop wird
+gelernt, indem gebaut wird. Der Ablauf aus `angebot/schulung-s1-ablauf.md`
+bleibt als Vorlage für die In-house-Variante nutzbar.
 
 ---
 
@@ -96,5 +93,7 @@ eigene Zeit, und die ist gedeckelt.
 1. Preise bestätigen oder korrigieren — vor allem R2. 3.500 € ist bewusst am
    oberen Rand angesetzt, weil die Kapazität begrenzt ist.
 2. Definierter Kanal für Fragen im Retainer: welcher?
-3. Ob es unter S1 noch etwas Kleineres geben soll. Empfehlung: nein.
+3. Ob es unter dem Workshop noch etwas Kleineres geben soll. Empfehlung: nein.
    Ein günstiger Einstieg zieht die Kunden an, die nicht umsetzen wollen.
+   Der Pilotpreis von 490 € ist einmalig und an eine Gegenleistung gebunden —
+   kein dauerhafter Einstiegspreis.

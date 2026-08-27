@@ -14,4 +14,5 @@ Persistente Notizen für die Zusammenarbeit mit Mariana (Sometra).
   eigenes Produkt, kein Agenten-Abo** (Stand: 2026-08-26). Die LinkedIn-Agenten
   sind Eigengebrauch, Lehrinhalt und Retainer-Arbeit beim Kunden — nicht
   Verkaufsgegenstand. Begründung und Angebotsleiter:
-  `entscheidungen/2026-08-26_schulung-statt-plattform.md`.
+  `entscheidungen/2026-08-26_schulung-statt-plattform.md`, Funnel und Preise:
+  `funnel/funnel.md`.
