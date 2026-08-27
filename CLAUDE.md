@@ -48,6 +48,10 @@ Persistente Notizen für die Zusammenarbeit mit Mariana (Sometra).
   ist es ungeklärt. Token und Geld laufen gegenläufig: Schreiben kostet
   Token, lokal rendern kostet nichts, Cloud kostet Geld statt Token.
   Also: **so oft lokal iterieren wie nötig.**
+- **Connectoren haben zwei Schalter:** `connected` (Konto-Ebene) und
+  `enabledInChat` (dieser Chat). Beides muss an sein, sonst fehlen die
+  Werkzeuge trotz erfolgreicher Verbindung. Mit `ListConnectors` prüfen,
+  bevor „ist nicht verbunden" behauptet wird.
 - **Connectoren laufen nicht über den Container-Egress.** Airtable ist per
   Connector nutzbar, obwohl `airtable.com` per curl nicht erreichbar ist.
   „curl kommt nicht durch" heißt also nicht „Connector geht nicht".
