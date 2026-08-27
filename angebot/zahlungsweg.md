@@ -195,11 +195,41 @@ Steuerberater bestätigen.
 Zulässig sind nur strukturierte Formate nach EN 16931, also XRechnung oder
 ZUGFeRD. **Eine PDF-Rechnung reicht dafür nicht.**
 
-Für diesen Workshop heißt das: 2026 ist PDF noch in Ordnung. Aber das
-Werkzeug, das jetzt ausgewählt wird, sollte ZUGFeRD können — sonst wird in
-zwei Jahren ein zweites Mal umgestellt.
+**Für Sometra konkret** (Stand 27.08.: Jahresumsatz unter 60.000 €):
+
+- **Ausstellen erst ab 01.01.2028.** Die 800.000-€-Grenze ist weit weg,
+  die Stufe 2027 betrifft Sie nicht. Für diesen Workshop reicht die
+  Rechnung, die Sie heute schon schreiben
+- **Empfangen gilt trotzdem seit 2025** — unabhängig vom Umsatz. Wenn ein
+  Lieferant Ihnen eine XRechnung schickt, müssen Sie sie lesen und
+  aufbewahren können
+- Bei der nächsten Werkzeugwahl auf ZUGFeRD achten, aber nichts deswegen
+  jetzt wechseln
 
 **Websuche.**
+
+---
+
+## Was der Workshop mit dem Umsatz macht
+
+Bei vollen Terminen: **36 × 2.356 € = 84.816 €** in sechs Wochen. Auf einen
+Jahresumsatz unter 60.000 € gerechnet ist das mehr als eine Verdopplung.
+
+Drei Folgen, die vor dem ersten Verkauf mit dem Steuerberater zu klären sind:
+
+- **Umsatzsteuer-Voranmeldung.** Der Rhythmus hängt an der Zahllast des
+  Vorjahres. Bei diesem Sprung kann er sich für 2027 ändern
+- **Einkommensteuer-Vorauszahlungen.** Die laufen auf der alten Zahl.
+  Was 2026 nicht vorausgezahlt wird, kommt 2027 in einer Summe
+- **Kleinunternehmerregelung**, falls sie in Anspruch genommen wird: Seit
+  2025 endet der Status sofort mit dem Umsatz, der die 100.000-€-Grenze
+  reißt — nicht erst im Folgejahr. Bei 60.000 € plus 84.816 € wäre das
+  mitten in der Workshop-Reihe. **Ungeprüft, ob das überhaupt zutrifft** —
+  die Landingpage weist Nettopreise zzgl. USt. aus, was auf Regelbesteuerung
+  hindeutet
+
+Das ist keine Steuerberatung. Es ist die Liste, mit der Sie ins Gespräch
+gehen.
 
 ---
 
