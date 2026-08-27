@@ -295,3 +295,57 @@ Genau daran ist die HyperFrames-Einschätzung gescheitert. Ich habe einen
 Ordner durchsucht, nichts gefunden und daraus „geht nicht" gemacht — statt
 `npx skills add` zu versuchen, was in der Anbieter-Beschreibung sogar
 danebenstand. Nicht suchen und schließen, sondern versuchen.
+
+---
+
+## Was kostet was — geprüft am 27.08.
+
+Quelle: die Anbieter-Doku, die mit den Skills ausgeliefert wird
+(`hyperframes-cli/references/cloud.md`, `preview-render.md`, `lambda.md`).
+Die Website `hyperframes.heygen.com` ist von hier nicht erreichbar.
+
+**Deine Aussage: „Nur Rendern kostet Geld, das Erstellen nicht."**
+→ **Im Kern richtig. Zwei Präzisierungen.**
+
+| Schritt | Geld bei HeyGen | Token | Beleg |
+|---|---|---|---|
+| Projekt anlegen, Komposition schreiben | **nein** | **ja** — das Schreiben ist die Arbeit | Testlauf lief ohne Anmeldung, `~/.heygen` existiert nicht |
+| `hyperframes render` **lokal** | **nein** | fast keine | Doku: „(local): fastest iteration loop, use while authoring". Kein Credit-Hinweis. Mein Render lief ohne Konto durch |
+| `hyperframes cloud render` | **ja** | fast keine | Doku wörtlich: „HeyGen runs the render and you **pay per credit**" |
+| `hyperframes lambda render` | ja, an AWS | fast keine | „Lambda billing is per-invocation + duration" |
+| `hyperframes cloudrun render` | ja, an GCP | fast keine | „billing enabled" vorausgesetzt |
+| `hyperframes publish` | **unklar** | keine | Lädt Quellen hoch, gibt öffentliche URL. Kein Credit-Hinweis in der Doku — heißt nicht „kostenlos", nur „steht nicht da" |
+
+### Präzisierung 1 — deine Aussage ist zu vorsichtig
+
+Nicht „Rendern kostet", sondern **Cloud-Rendern kostet.**
+Der lokale Render braucht kein HeyGen-Konto: Chromium und FFmpeg laufen hier
+im Container. Belegt dadurch, dass mein Testrender ohne jede Anmeldung
+durchlief — `~/.heygen/credentials` gibt es nicht.
+
+Für die Videoproduktion heißt das: **iterieren so oft wie nötig, ohne Kosten.**
+Die Cloud brauchen wir nur, wenn eine Komposition hier zu groß oder zu lang
+wird, oder wenn ein Projekt in `app.heygen.com` liegen soll.
+
+### Präzisierung 2 — Token und Geld sind zwei verschiedene Achsen
+
+Sie verhalten sich sogar gegenläufig:
+
+- **Erstellen** kostet Token (ich schreibe die Komposition), aber kein Geld
+- **Lokal rendern** kostet weder Token noch Geld, nur Rechenzeit
+- **Cloud rendern** kostet Geld, aber kaum Token
+
+Der teure Teil in Token ist also genau der, den du für kostenlos gehalten hast —
+und umgekehrt.
+
+### Korrektur an mir
+
+Ich hatte geschrieben, das MCP-Werkzeug `compose` löse einen
+kostenpflichtigen Cloud-Render aus. **Das war eine Annahme, kein Beleg.**
+Die Anbieter-Beschreibung trennt Authoring (`compose`) und Rendering
+(`render_video`) als zwei Schritte — was eher für deine Lesart spricht.
+
+Ob ein `compose`-Aufruf allein schon Credits zieht, steht in keiner Quelle,
+die ich gesehen habe. Der Connector ist gerade nicht verbunden, ich kann das
+Schema nicht nachlesen. **Bleibt offen** — brauchen wir für die
+Videoproduktion aber ohnehin nicht, weil lokal reicht.
