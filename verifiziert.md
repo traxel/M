@@ -172,8 +172,8 @@ dann dazu, statt es als gesichert zu verkaufen.
 
 | Annahme | Warum ungeprüft |
 |---|---|
-| Landingpage-System | **Mariana am 27.08.: wird in sometra.de integriert.** Womit sometra.de läuft, bleibt offen — die Domain ist aus dem Container blockiert (403 vom Proxy, per Abruf und per curl geprüft) |
-| Zahlungsweg für den Workshop | **Geprüft am 27.08.: kein Zahlungs-Connector in dieser Umgebung.** Optionen und Empfehlung in `angebot/zahlungsweg.md` — dort alles zu Gebühren und Fristen ausdrücklich nur Websuche |
+| ~~Landingpage-System~~ | **Geklärt 27.08.: Hosteurope, WordPress, Oxygen Builder.** Die Seite wird in sometra.de integriert. Impressum und Firmendaten stehen dort bereits. sometra.de selbst ist aus dem Container blockiert (403 vom Proxy, per Abruf und curl geprüft) — ich kann die Seite von hier nicht ansehen |
+| ~~Zahlungsweg~~ | **Entschieden 27.08.: Stripe, Einrichtung durch Mariana am Wochenende.** Kein Zahlungs-Connector in dieser Umgebung, Optionen und Empfehlung in `angebot/zahlungsweg.md` — dort alles zu Gebühren und Fristen ausdrücklich nur Websuche |
 | Screen-Recording-Werkzeug | Unbekannt, womit du aufnimmst |
 | LinkedIn-Content-Scanner | Beruht auf deiner Aussage, dass die Agenten Profile erreichen. Die Agenten-Prompts selbst habe ich nie gesehen — sie liegen lokal, nicht in Drive |
 | Kalender-/Buchungswerkzeug | Google Calendar ist verbunden — ob du damit buchen lassen willst, ist offen |
@@ -349,3 +349,44 @@ Ob ein `compose`-Aufruf allein schon Credits zieht, steht in keiner Quelle,
 die ich gesehen habe. Der Connector ist gerade nicht verbunden, ich kann das
 Schema nicht nachlesen. **Bleibt offen** — brauchen wir für die
 Videoproduktion aber ohnehin nicht, weil lokal reicht.
+
+---
+
+## Nachtrag 27.08., Abend — HeyGen und HyperFrames in *dieser* Session
+
+Am selben Tag geprüft, mit gegenteiligem Ergebnis als am Nachmittag —
+**weil es ein anderer Container ist:**
+
+| Prüfung | Ergebnis |
+|---|---|
+| `which ffmpeg ffprobe` | nicht vorhanden |
+| `~/.claude/skills/` | nur `session-start-hook` und `synced`. **Keine hyperframes-Skills** |
+| `~/.heygen` | existiert nicht |
+| `HEYGEN_*`, `FAL_KEY` in der Umgebung | nicht gesetzt |
+
+Das widerspricht dem Eintrag oben nicht. Dort steht ausdrücklich: **„Der
+Container ist flüchtig. Beides ist nach einer neuen Session wieder weg."**
+Genau das ist eingetreten.
+
+**Nachinstallierbar, am 27.08. nachmittags end-to-end belegt:**
+```
+npx skills add heygen-com/hyperframes
+apt-get install -y ffmpeg
+```
+Kostet ein paar Minuten und keine Credits.
+
+### Die Grenze, die dadurch nicht verschwindet
+
+HyperFrames rendert **programmierte HTML-Videos**. Ein sprechender Avatar
+ist etwas anderes:
+
+| Was | Von hier |
+|---|---|
+| Animiertes HTML-Video, lokal gerendert | **geht**, nach Nachinstallation, kostenlos |
+| Sprachausgabe über `hyperframes-media` (TTS) | **ungeprüft**, ob ohne HeyGen-Konto |
+| **Sprechender Avatar** („Mike") | **geht nicht von hier.** Das ist ein HeyGen-Produkt, braucht Konto und Credits |
+| MCP-Werkzeuge `compose` und `render_video` | vom Anbieter **für CLI-Clients wie diesen gesperrt**, mit Verweis auf die lokalen Skills |
+
+Für ein Promo-Video mit einem sprechenden Avatar heißt das: Der Avatar
+entsteht in Marianas HeyGen-Konto, nicht hier. Ich liefere Skript,
+Sprechtext und die animierten Einblendungen.
