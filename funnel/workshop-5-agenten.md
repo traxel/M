@@ -16,8 +16,11 @@ Nicht "er weiß jetzt, wie es geht". Es läuft.
 
 ## Die fünf Agenten
 
-Das ist der Akquise-Stack, der bei Sometra täglich läuft. Er wird nicht gezeigt —
-er wird gemeinsam neu gebaut, jeder für sein eigenes Geschäft.
+Agent 1–4 laufen bei Sometra täglich. Agent 5 existiert noch nicht und wird
+vorher gebaut — siehe `agenten/content-agent.md`.
+
+Im Workshop wird nichts vorgeführt, sondern gemeinsam neu gebaut, jeder für
+sein eigenes Geschäft.
 
 **1 — Recherche-Agent**
 Findet passende Entscheider nach festgelegten Kriterien und legt sie strukturiert ab.
@@ -37,7 +40,11 @@ Erkennt, wer wartet, und schreibt die Folgenachricht aus dem bisherigen Verlauf.
 Kein Pitch, bevor ein Gespräch da ist.
 
 **5 — Content-Agent**
-Recherchiert Themen, bewertet sie nach Relevanz und schreibt den Beitrag im eigenen Ton.
+Recherchiert Themen, bewertet sie nach Relevanz und gibt sie plattformgerecht aus.
+Nicht vier Agenten für vier Plattformen: ein Kern, zwei Ausgabezweige.
+Aufbau in `agenten/content-agent.md`.
+
+*Status: noch nicht gebaut.*
 
 Zusammen sind das keine fünf Spielereien, sondern ein Ablauf: finden, prüfen,
 ansprechen, nachfassen, sichtbar bleiben.
