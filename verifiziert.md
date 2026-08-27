@@ -202,9 +202,9 @@ ich meine.
 | YouTube Data API | ✓ **sobald ein Key da ist** | ✓ | `googleapis.com` antwortet |
 | **Kling** | ✗ | **✓** | in `media-gen` über Fal: `fal-ai/kling-video/v3/pro/image-to-video` und `v3/4k`. Braucht `FAL_KEY` — hier nicht gesetzt, `fal.run` nicht erreichbar |
 | Alle anderen Fal-Modelle | ✗ | ✓ | dieselbe Ursache |
-| **HyperFrames** | ✗ | ✓ | Skill, Connector und Dateien hier nicht vorhanden |
+| **HyperFrames** | **✓ end-to-end getestet** | ✓ | siehe unten |
 | **Thumbnail-Render** | ✗ | ✓ | `Thumbnail rendern.command`, headless Chrome, lokal |
-| **HeyGen** | ✗ | **unklar** | siehe unten |
+| **HeyGen** | ✓ Connector `HyperFrames by HeyGen` | ✓ | HeyGen und HyperFrames sind derselbe Anbieter |
 
 ### Kling — korrigiert
 
@@ -217,17 +217,70 @@ Für die Videoarbeit heißt das: **Kling-Prompts schreibe ich hier, ausgeführt
 wird lokal.** Genau die Rollenteilung, die `visual-regie` ohnehin vorsieht —
 sie liefert den Prompt, das Tool baut.
 
-### HeyGen — ich finde keine Spur
+### HeyGen = HyperFrames — und beides läuft hier
 
-Geprüft: keine Erwähnung in `media-gen` (weder `models.json` noch `SKILL.md`
-noch `README.md`), kein Connector, `api.heygen.com` nicht erreichbar.
+Der Connector heißt **`HyperFrames by HeyGen`**. Damit ist die Frage
+beantwortet: HeyGen und HyperFrames sind derselbe Anbieter, und mein
+„HeyGen finde ich nirgends" war eine Suche nach dem falschen Namen.
 
-Der einzige Hinweis ist der Drive-Ordner `videos/fal-heygen-test`
-(`1gwOE3qIcXted4j4bLAwM7sGFihdMsfVN`) — der Name deutet auf einen Test über Fal.
+**Am 27.08. end-to-end getestet, nicht aus der Doku übernommen:**
 
-**Frage an dich, statt einer Vermutung:** Lief HeyGen über einen Fal-Endpunkt,
-über einen eigenen HeyGen-Account mit API-Key, oder über die HeyGen-Oberfläche
-von Hand? Danach richtet sich, ob ich überhaupt etwas dazu vorschlagen kann.
+```
+npx skills add heygen-com/hyperframes     → 9 Skills installiert
+npx hyperframes init … --example blank    → Projekt angelegt
+npx hyperframes render --quality draft    → out.mp4
+```
+
+Ergebnis: **1920×1080, h264, 10,0 s, gerendert in 25,5 s.**
+Mit `ffprobe` gegengeprüft, nicht nur „hat nicht gemeckert".
+
+Damit ist belegt: **Animierte HyperFrames kann ich aus dieser Umgebung
+bauen und rendern.** Meine gegenteilige Aussage war falsch — sie beruhte
+darauf, dass ich nur den Skills-Ordner durchsucht und daraus geschlossen
+habe, statt zu versuchen zu installieren.
+
+**Installierte Skills:** `hyperframes`, `-core`, `-cli`, `-animation`,
+`-keyframes`, `-audio`, `-creative`, `-registry`, `remotion-to-hyperframes`.
+
+**Zwei Dinge mussten nachinstalliert werden:**
+- `ffmpeg` und `ffprobe` über `apt-get install ffmpeg`. Das mitgelieferte
+  Playwright-ffmpeg reicht nicht — **ffprobe fehlt dort**, und der Renderer
+  braucht es.
+- Chrome lädt der Renderer beim ersten Lauf selbst nach (114 MB).
+
+**Wichtig: Der Container ist flüchtig.** Beides ist nach einer neuen Session
+wieder weg. Das gehört in einen SessionStart-Hook, sonst kostet es jedes Mal
+ein paar Minuten.
+
+**Eine Einschränkung, ehrlich:** Der Testrender lief mit der Warnung
+`sub_timeline_script_failure` durch — aus der Blank-Vorlage, nicht aus eigenem
+Code. Die MP4 ist gültig. Bei einer echten Komposition ist das nachzuprüfen.
+
+### Der Connector selbst — teilweise geprüft
+
+`list_projects` funktioniert, liefert eine leere Liste. Passt ins Bild: deine
+bisherigen HyperFrames waren lokale Dateien, keine HeyGen-Projekte.
+
+`compose` und `render_video` sind laut Anbieter-Beschreibung **für
+CLI-Clients wie diesen deaktiviert** — mit dem ausdrücklichen Hinweis,
+stattdessen die lokalen Skills zu nutzen. Genau die laufen jetzt.
+
+**Ungetestet gelassen, mit Absicht:** `compose` löst einen Cloud-Render aus,
+und der kostet. Ob die Sperre für diese Session wirklich greift, sage ich
+erst nach deinem Okay — nicht auf deine Rechnung geraten.
+
+Brauchen wir ohnehin nur, wenn ein Projekt in `app.heygen.com` liegen soll,
+zum Teilen oder Weiterbearbeiten. Für die Videoproduktion reicht lokal.
+
+### Noch ein Fund: Whisper ist eingebaut
+
+`hyperframes init --audio <datei>` **transkribiert beim Anlegen** —
+Modellauswahl `tiny.en`, `base.en`, `small.en`, `medium.en`, `large`,
+dazu `--language`.
+
+Das ist vermutlich der Weg, an den du dich erinnert hast. Damit gibt es für
+Hooks jetzt **zwei** geprüfte Wege: Descript (`srt` mit Zeitmarken) und
+HyperFrames-CLI mit Whisper.
 
 ### Die Regel, die daraus folgt
 
@@ -235,5 +288,10 @@ Bevor ich ein Werkzeug ausschließe, prüfe ich beide Ebenen:
 1. Ist es im Werkzeugbestand vorhanden — Connector, Skill, Modellliste?
 2. Ist es **von hier** ausführbar — Key gesetzt, Host erreichbar?
 
-Zwei getrennte Fragen. Ich hatte sie zusammengeworfen und deshalb dreimal
-„geht nicht" gesagt, wo „nicht von hier" richtig gewesen wäre.
+Und eine dritte Frage, die ich ganz vergessen hatte:
+3. **Lässt es sich hier nachinstallieren?**
+
+Genau daran ist die HyperFrames-Einschätzung gescheitert. Ich habe einen
+Ordner durchsucht, nichts gefunden und daraus „geht nicht" gemacht — statt
+`npx skills add` zu versuchen, was in der Anbieter-Beschreibung sogar
+danebenstand. Nicht suchen und schließen, sondern versuchen.

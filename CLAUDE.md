@@ -35,6 +35,13 @@ Persistente Notizen für die Zusammenarbeit mit Mariana (Sometra).
   Connectors lesen, (3) Umgebung prüfen (`ListConnectors`, `ListSkills`,
   Dateisystem, curl), (4) Websuche. Nur wenn 1–3 nichts hergeben, zählt 4 —
   und dann wird dazugesagt, dass es nur Websuche war.
+- **Drei Fragen, bevor etwas ausgeschlossen wird:** Ist es vorhanden? Läuft es
+  von hier? **Lässt es sich hier nachinstallieren?** Die dritte wird am
+  leichtesten vergessen — HyperFrames war so ein Fall.
+- **HyperFrames/HeyGen läuft in Remote-Sessions** nach
+  `npx skills add heygen-com/hyperframes` und `apt-get install -y ffmpeg`
+  (ffprobe wird gebraucht, Playwright-ffmpeg reicht nicht). End-to-end
+  geprüft am 2026-08-27. Beides ist pro Container neu nötig.
 - **Zwei Umgebungen unterscheiden.** Remote-Cloud-Sessions haben nur eine
   gesyncte Teilmenge der Skills. HyperFrames-Engine und Thumbnail-Render
   laufen lokal auf dem Mac. „Geht nicht" heißt oft „geht nicht von hier" —
