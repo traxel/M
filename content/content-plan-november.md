@@ -44,12 +44,13 @@ Nach der Regel aus `skills/schulung-aufbauen/SKILL.md`:
 
 | Aus dem Tagesplan | Wird zu | Steht bereits |
 |---|---|---|
-| Lernziel „um 17:00 laufen fünf Agenten" | das Versprechen auf der Landingpage | ✓ `landingpage/index.html` |
+| Lernziel „um 17:00 läuft mindestens ein selbst gebauter Agent" | das Versprechen auf der Landingpage | ✓ `landingpage/index.html` |
 | Kontrollpunkt (drei Datensätze + ein Ausschluss) | der Beweis: „so sieht es aus, wenn es läuft" | Post 1, später Video |
 | Was schiefgeht 1: Rollen-Liste zu breit | Hook — der Fehler ist interessanter als der Erfolg | Post 2 |
 | Konstruktionsregel: kein Agent klickt auf Senden | der Unterschied zu allem, was sonst angeboten wird | Post 3 |
 | Was schiefgeht 2: Lauf bricht ab | der ehrliche Post, der Vertrauen bringt | Post 4 |
 | Material: Prüfliste „10 Kandidaten" | das kostenlose Gegenstück, das Anmeldungen bringt | Post 5 |
+| Gruppengröße 12 (weil Mari an jeden Platz kommt) | der Grund für den Preis und für die Verknappung | in jedem Post genannt |
 
 **Kanalzuordnung, erst hier:**
 - **LinkedIn-Text** trägt diesen Durchlauf. Zwei Beiträge pro Woche.
@@ -84,12 +85,12 @@ Alle in Marianas Stimme. Leser wird gesiezt. Keine Emojis, keine Hashtag-Wolke.
 
 ## Post 1 — Terminankündigung
 
-> Um 17:00 Uhr laufen fünf Vertriebsagenten in Ihrem Konto. Mit Ihren Daten,
-> für Ihre Kunden.
+> Um 17:00 Uhr läuft Ihr erster selbst programmierter Vertriebsagent. In Ihrem
+> Konto, mit Ihren Daten, für Ihre Kunden.
 >
 > Nicht als Demo. Nicht als Aufzeichnung, die Sie sich später ansehen.
-> Sie bauen sie an dem Tag selbst, und abends prüfe ich an Ihrem Platz nach,
-> ob sie laufen.
+> Sie bauen ihn an dem Tag selbst, und abends komme ich an Ihren Platz und
+> prüfe nach, ob er läuft.
 >
 > Wie das aussieht: In Ihrer Ablage stehen mindestens drei geprüfte Kontakte.
 > Bei jedem steht dabei, welche Suche ihn geliefert hat. Und mindestens ein
@@ -98,19 +99,26 @@ Alle in Marianas Stimme. Leser wird gesiezt. Keine Emojis, keine Hashtag-Wolke.
 > Der Ausschluss ist mir wichtiger als die Treffer. Ein Such-Agent, der alles
 > durchwinkt, fällt Ihnen erst in vier Wochen auf.
 >
-> Ich mache das an drei Tagen, in drei Städten:
+> Wir gehen an dem Tag durch fünf Agenten: finden, prüfen, ansprechen,
+> nachfassen, sichtbar bleiben. Zusagen tue ich Ihnen den ersten. Ich verspreche
+> lieber weniger, als ich im Raum nachprüfen kann.
+>
+> Drei Tage, drei Städte:
 >
 > Hamburg, 10. November
 > Köln, 17. November
 > München, 24. November
 >
-> Jeweils 09:00 bis 17:00 Uhr. Zwölf Plätze pro Stadt, weil ich bei zwölf
-> Leuten noch an jeden Platz komme.
+> Jeweils 09:00 bis 17:00 Uhr. Zwölf Plätze pro Stadt.
 >
-> Wenn abends kein einziger Agent bei Ihnen läuft, bekommen Sie den vollen
-> Preis zurück.
+> Zwölf ist keine Marketingzahl. Zwölf ist die Grenze, bis zu der ich an einem
+> Tag noch an jeden einzelnen Platz komme. Ab dreizehn sitzt jemand hinten und
+> kommt nicht mit — und dann könnte ich das mit der Garantie nicht sagen.
 >
-> Link in den Kommentaren. Schreiben Sie mir, welche Stadt.
+> Die lautet: Wenn abends nicht mindestens ein Agent bei Ihnen läuft, bekommen
+> Sie den vollen Preis zurück.
+>
+> 2.356 € netto. Link in den Kommentaren, schreiben Sie mir Ihre Stadt.
 
 ---
 
@@ -165,6 +173,9 @@ Alle in Marianas Stimme. Leser wird gesiezt. Keine Emojis, keine Hashtag-Wolke.
 >
 > Ich halte das nicht für eine Einschränkung. Ich halte es für den einzigen
 > Aufbau, den man einem Vertrieb guten Gewissens hinstellen kann.
+>
+> Im November zeige ich, wie man so einen Agenten baut — in Hamburg, Köln und
+> München. Zwölf Plätze je Stadt.
 
 ---
 
@@ -214,6 +225,10 @@ Alle in Marianas Stimme. Leser wird gesiezt. Keine Emojis, keine Hashtag-Wolke.
 >
 > Kommentieren Sie „Prüfliste", dann schicke ich sie Ihnen. Sie brauchen dafür
 > nichts zu buchen.
+>
+> Wer den Agenten lieber an einem Tag mit mir baut: Hamburg am 10.11., Köln am
+> 17.11., München am 24.11. Zwölf Plätze je Stadt, weil ich bei zwölf Leuten
+> noch an jeden Platz komme.
 
 ---
 
@@ -221,7 +236,7 @@ Alle in Marianas Stimme. Leser wird gesiezt. Keine Emojis, keine Hashtag-Wolke.
 
 | Was | Wer |
 |---|---|
-| Preis bestätigen: 2.356 € netto oder brutto | Mari |
+| ~~Preis bestätigen~~ — **2.356 € netto, bestätigt 27.08.** | erledigt |
 | Termine bestätigen (10./17./24.11., dienstags) | Mari |
 | Räume in drei Städten | Mari |
 | Prüfliste „10 Kandidaten" tatsächlich bauen — Post 5 verspricht sie | Ich, sobald die Termine stehen |

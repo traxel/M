@@ -5,6 +5,34 @@ Stand: 2026-08-27. Status: Vorschlag zur Freigabe.
 
 ---
 
+## Das Versprechen — und warum es kleiner ist als der Tag
+
+Nach außen versprochen ist **ein** Agent: „Um 17:00 Uhr läuft Ihr erster
+selbst programmierter Vertriebsagent."
+
+Gebaut werden am Tag **fünf**. Der Unterschied ist Absicht.
+
+Fünf Agenten für zwölf Leute in 235 Minuten sind erreichbar, aber nicht
+garantierbar — es hängt daran, wie sauber die Kriterien sitzen und ob das
+Netzwerk mitspielt. Ein Agent, geprüft am Platz, ist garantierbar. Und die
+Garantie hängt genau an dem, was am Platz nachgeprüft wird.
+
+**Folge für den Tag:** Der Kontrollpunkt aus Block 2 ist der Garantiepunkt.
+Er sitzt vor der Mittagspause, nicht um 16:45. Wenn dort bei jemandem nichts
+läuft, sind noch vier Stunden Zeit — und nicht fünfzehn Minuten.
+
+**Folge für die Gruppengröße:** Zwölf ist die Zahl, bei der Mariana an einem
+Tag an jeden Platz kommt. Ab dreizehn ist die Garantie eine Behauptung.
+Deshalb steht die Zahl in jedem Text nach außen, mit genau dieser Begründung.
+
+**Folge für die Sprache:** „Selbst programmiert" und „Sie müssen nicht
+programmieren" dürfen nicht nebeneinanderstehen. Gesagt wird: eine
+Programmiersprache braucht niemand, aber Auftrag, Prüflogik und
+Abbruchregeln schreibt jeder selbst — und das läuft weiter, wenn der Rechner
+zugeklappt ist.
+
+---
+
 ## Die Zeitrechnung
 
 | | Minuten |
@@ -21,6 +49,9 @@ gestreckt, um die Rechnung aufgehen zu lassen.
 ---
 
 ## Der Tag
+
+Max. 12 Teilnehmer. Die Zahl ist nicht kosmetisch — sie ist die Bedingung
+dafür, dass der Kontrollpunkt an jedem Platz stattfindet.
 
 | Zeit | Dauer | Was |
 |---|---|---|
@@ -94,7 +125,8 @@ anderen vier wiederverwenden.
 Wer heute nichts entscheiden will, nimmt Excel. Umsteigen geht später,
 umgekehrt auch.
 
-**Kontrollpunkt Block 2** — von außen prüfbar, zweiteilig:
+**Kontrollpunkt Block 2 — das ist der Garantiepunkt des Tages.**
+Von außen prüfbar, zweiteilig:
 - **a)** mindestens drei Datensätze in der eigenen Ablage, alle Pflichtfelder
   befüllt, jeder mit Vermerk, welche Rolle und welche Seite ihn geliefert haben
 - **b)** mindestens ein protokollierter Ausschluss mit genanntem Kriterium

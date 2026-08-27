@@ -14,12 +14,18 @@ Tage vorher. Im Modul geht es um den Agenten, nicht um das Konto.
 
 ## 1 Lernziel
 
-> Sie haben einen Agenten, der nach Ihren eigenen Kriterien Entscheider
-> findet, jeden Fund gegen fünf Pflichtkriterien prüft und nur das
-> Geprüfte strukturiert ablegt — ohne jemanden anzuschreiben.
+> Sie haben einen Agenten selbst programmiert, der nach Ihren eigenen
+> Kriterien Entscheider findet, jeden Fund gegen fünf Pflichtkriterien
+> prüft und nur das Geprüfte strukturiert ablegt — ohne jemanden
+> anzuschreiben.
 
 Überprüfbar an Feld 4. Nicht "Sie verstehen, wie Recherche-Agenten
 funktionieren". Er läuft oder er läuft nicht.
+
+**Dieses Modul trägt die Garantie.** Nach außen ist genau ein Agent
+versprochen, und es ist dieser. Alle weiteren Module bauen auf dem Muster
+auf, das hier entsteht — deshalb liegt der Garantiepunkt hier und nicht am
+Ende des Tages.
 
 ---
 

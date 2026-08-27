@@ -1,4 +1,4 @@
-<title>Fünf Vertriebsagenten</title>
+<title>Ihr erster Vertriebsagent</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
@@ -87,6 +87,19 @@ p{margin:0 0 16px}
 .rail .track{height:2px; background:linear-gradient(90deg,var(--band-line),var(--accent)); border-radius:2px}
 .rail-note{font-family:"IBM Plex Mono",monospace; font-size:12.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--band-ink-2); margin:-20px 0 34px}
 
+.stats{
+  display:flex; flex-wrap:wrap; gap:14px 44px; margin:0 0 36px;
+  border-bottom:1px solid var(--band-line); padding-bottom:28px; max-width:640px;
+}
+.stats div{display:flex; align-items:baseline; gap:11px}
+.stats .fig{
+  font-family:Montserrat,sans-serif; font-weight:900; font-size:34px; letter-spacing:-.03em;
+  color:var(--accent); font-variant-numeric:tabular-nums; line-height:1;
+}
+.stats .lbl{
+  font-family:"IBM Plex Mono",monospace; font-size:12.5px; letter-spacing:.11em;
+  text-transform:uppercase; color:var(--band-ink-2);
+}
 .cta-row{display:flex; flex-wrap:wrap; gap:14px 20px; align-items:center; padding-bottom:56px}
 .btn{
   display:inline-block; background:var(--accent-solid); color:var(--accent-on);
@@ -225,20 +238,24 @@ footer a{color:var(--band-ink)}
 <header class="hero">
   <div class="wrap">
     <p class="eyebrow"><span>Hamburg 10.11.</span> · <span>Köln 17.11.</span> · <span>München 24.11.2026</span></p>
-    <h1>Um 17:00 Uhr laufen fünf Vertriebsagenten in <em>Ihrem</em> Konto.</h1>
-    <p class="lead">Mit Ihren Daten. Für Ihre Kunden. Sie bauen sie an diesem Tag selbst — Schritt für Schritt, mit mir daneben.</p>
+    <h1>Um 17:00 Uhr läuft Ihr erster selbst programmierter <em>Vertriebsagent</em>.</h1>
+    <p class="lead">In Ihrem Konto, mit Ihren Daten, für Ihre Kunden. Sie haben ihn gebaut, nicht ich. Ich saß daneben.</p>
 
     <div class="rail">
       <span class="t mono">09:00</span>
       <span class="track"></span>
       <span class="t end mono">17:00</span>
     </div>
-    <p class="rail-note">Ein Tag · Präsenz · max. 12 Teilnehmer</p>
+    <div class="stats">
+      <div><span class="fig">12</span><span class="lbl">Plätze je Stadt</span></div>
+      <div><span class="fig">3</span><span class="lbl">Städte im November</span></div>
+      <div><span class="fig">1</span><span class="lbl">Tag, 09–17 Uhr</span></div>
+    </div>
 
     <div class="cta-row">
       <a class="btn" href="#termine">Platz sichern</a>
       <a class="btn btn-ghost" href="#tag">Den Tag ansehen</a>
-      <span class="price-inline">2.356 € zzgl. USt. · Geld zurück, wenn nichts läuft</span>
+      <span class="price-inline">2.356 € netto je Person · Geld zurück, wenn nichts läuft</span>
     </div>
   </div>
 </header>
@@ -248,8 +265,10 @@ footer a{color:var(--band-ink)}
   <div class="wrap">
     <div class="col">
       <p class="eyebrow">Was Sie abends dabeihaben</p>
-      <h2>Nicht Notizen. Fünf Agenten, die am Montag weiterlaufen.</h2>
-      <p class="lead">Die fünf sind keine fünf Spielereien. Sie sind ein Ablauf — und jeder übergibt an den nächsten.</p>
+      <h2>Nicht Notizen. Einen Agenten, den Sie selbst gebaut haben.</h2>
+      <p class="lead">Wir gehen an diesem Tag durch fünf Agenten. Versprochen ist einer: der, der abends nachweislich bei Ihnen läuft.</p>
+      <p>Ich verspreche bewusst weniger, als wir bauen. Wie weit Sie kommen, hängt davon ab, wie sauber Ihre Kriterien sitzen und wie Ihr Netzwerk an dem Tag mitspielt. Was ich Ihnen zusagen kann, ist der erste — und der ist der, auf dem alle anderen aufbauen.</p>
+      <p>Die fünf sind keine fünf Spielereien. Sie sind ein Ablauf, und jeder übergibt an den nächsten.</p>
     </div>
 
     <div class="chain">
@@ -358,8 +377,8 @@ footer a{color:var(--band-ink)}
       </div>
       <div class="r fin">
         <div class="time">17:00</div>
-        <p class="what">Fünf Agenten laufen
-          <small>Bei Ihnen. In Ihrem Konto. Geprüft, nicht behauptet.</small>
+        <p class="what">Ihr Agent läuft
+          <small>Bei Ihnen. In Ihrem Konto. Ich prüfe es an Ihrem Platz nach — geprüft, nicht behauptet.</small>
         </p>
       </div>
     </div>
@@ -403,7 +422,7 @@ footer a{color:var(--band-ink)}
       <p class="eyebrow">Die Garantie</p>
     </div>
     <div class="guarantee col">
-      <blockquote>Wenn am Ende des Tages kein einziger Agent bei Ihnen läuft, bekommen Sie den vollen Preis zurück. Ohne Diskussion.</blockquote>
+      <blockquote>Wenn am Ende des Tages nicht mindestens ein Agent bei Ihnen läuft, bekommen Sie den vollen Preis zurück. Ohne Diskussion.</blockquote>
       <p class="small">Bedingung, offen genannt: Sie waren da und haben mitgebaut.</p>
       <p class="small">Warum so und nicht als Zufriedenheitsgarantie: „Wenn es Ihnen nicht gefällt" ist Geschmackssache. „Es läuft oder es läuft nicht" ist überprüfbar — und das prüfen wir noch im Raum, an jedem Platz.</p>
     </div>
@@ -415,7 +434,9 @@ footer a{color:var(--band-ink)}
   <div class="wrap">
     <div class="col">
       <p class="eyebrow">Termine</p>
-      <h2>Drei Städte. Drei Termine. Je zwölf Plätze.</h2>
+      <h2>Zwölf Plätze je Stadt. Mehr nehme ich nicht an.</h2>
+      <p class="lead">Zwölf ist keine Marketingzahl. Zwölf ist die Grenze, bis zu der ich an einem Tag noch an jeden einzelnen Platz komme.</p>
+      <p>Ab dreizehn sitzt jemand hinten und kommt nicht mit. Dann steht abends bei ihm nichts, und die Garantie oben wäre eine Behauptung. Deshalb ist bei zwölf Schluss, auch wenn noch jemand fragt.</p>
     </div>
     <div class="cards">
       <div class="card">
@@ -438,9 +459,9 @@ footer a{color:var(--band-ink)}
     <div class="cards" style="margin-top:20px">
       <div class="pricebox">
         <span class="amount">2.356 €</span>
-        <span class="per">je Person · zzgl. USt.</span>
+        <span class="per">je Person · netto, zzgl. USt.</span>
         <ul class="incl">
-          <li>Ein voller Tag, max. 12 Teilnehmer</li>
+          <li>Ein voller Tag in einer Gruppe von höchstens zwölf</li>
           <li>Frühstück, Mittagessen, Kaffee</li>
           <li>Alle Vorlagen und Anleitungen zum Nachbauen</li>
           <li>Ihre Unterlagen und der nächste Schritt, zwei Werktage später per Mail</li>
@@ -467,7 +488,7 @@ footer a{color:var(--band-ink)}
         <li><strong>Ihr LinkedIn-Konto</strong>, eingeloggt</li>
         <li><strong>Airtable oder Excel.</strong> Beide Wege werden gezeigt, Sie entscheiden am Tag</li>
       </ul>
-      <p class="small" style="margin-top:24px">Programmieren müssen Sie nicht. Keine Zeile.</p>
+      <p class="small" style="margin-top:24px">Eine Programmiersprache brauchen Sie nicht. Sie schreiben Auftrag, Prüflogik und Abbruchregeln Ihres Agenten selbst — in Ihrer Sprache. Das Ergebnis ist trotzdem ein Programm, und es läuft ohne Sie weiter.</p>
     </div>
   </div>
 </section>
@@ -480,8 +501,8 @@ footer a{color:var(--band-ink)}
       <h2>Was Teilnehmer vorher wissen wollen</h2>
       <div class="faq">
         <details>
-          <summary>Ich kann nicht programmieren. Reicht das?</summary>
-          <p>Ja. Sie schreiben Anweisungen in Ihrer Sprache, nicht in Code. Was Code ist, erfahren Sie am Vormittag — damit Sie einschätzen können, was da passiert. Schreiben müssen Sie keinen.</p>
+          <summary>Sie schreiben „selbst programmiert". Ich kann aber nicht programmieren.</summary>
+          <p>Sie brauchen keine Programmiersprache. Sie legen fest, was der Agent tun soll, woran er einen Treffer erkennt, wohin er schreibt und wann er abbricht. Das schreiben Sie in Ihrer Sprache, und das ist die eigentliche Arbeit. Was dabei entsteht, ist ein Programm: Es läuft weiter, wenn Sie den Rechner zuklappen. Was Code ist und was darunter passiert, erfahren Sie am Vormittag — damit Sie einschätzen können, was Sie da gebaut haben.</p>
         </details>
         <details>
           <summary>Wir haben schon Software eingeführt, die dann keiner genutzt hat.</summary>
@@ -501,7 +522,11 @@ footer a{color:var(--band-ink)}
         </details>
         <details>
           <summary>Was passiert, wenn ich in einem Schritt hängenbleibe?</summary>
-          <p>Dann komme ich an Ihren Platz. Zwölf Teilnehmer sind genau die Zahl, bei der das an einem Tag geht. Kein Block endet, bevor er bei allen läuft.</p>
+          <p>Dann komme ich an Ihren Platz. Zwölf ist genau die Zahl, bei der das an einem Tag geht — das ist der einzige Grund, warum die Gruppe so klein ist. Kein Block endet, bevor er bei allen läuft.</p>
+        </details>
+        <details>
+          <summary>Was, wenn ich nur zwei oder drei Agenten schaffe?</summary>
+          <p>Dann haben Sie zwei oder drei. Die Vorlagen und Anleitungen für die restlichen bekommen Sie trotzdem, und sie funktionieren auch zuhause — weil Sie das Muster an dem Tag verstanden haben. Zugesagt ist der erste, weil ich nur zusagen will, was ich im Raum nachprüfen kann.</p>
         </details>
         <details>
           <summary>Was kommt nach dem Tag?</summary>
@@ -521,7 +546,7 @@ footer a{color:var(--band-ink)}
         <p class="eyebrow">Wer den Tag hält</p>
         <h2>Mariana Theux</h2>
         <p class="lead">Ich führe KI in Vertrieb und Marketing im DACH-Mittelstand ein — und zwar so, dass sie nach meinem Abgang noch benutzt wird.</p>
-        <p>Die fünf Agenten, die Sie an diesem Tag bauen, laufen bei mir selbst. Ich zeige Ihnen keinen Prototyp, sondern das, womit ich arbeite — samt der Stellen, an denen es hakt.</p>
+        <p>Die Agenten, die Sie an diesem Tag bauen, laufen bei mir selbst. Ich zeige Ihnen keinen Prototyp, sondern das, womit ich arbeite, samt der Stellen, an denen es hakt.</p>
         <p>Reale Nutzung vor Tool-Begeisterung. Kein Clickbait, kein Versprechen, das nicht gedeckt ist.</p>
       </div>
     </div>
@@ -537,7 +562,7 @@ footer a{color:var(--band-ink)}
       <p class="lead">Schreiben Sie mir, in welcher Stadt Sie dabei sein wollen. Sie bekommen die Rechnung, den Raum und den Technik-Check.</p>
       <div class="cta-row" style="padding-bottom:0">
         <a class="btn" href="mailto:mail@sometra.de?subject=Workshop%20Vertriebsagenten%20—%20Platz%20sichern">Platz sichern</a>
-        <span class="price-inline" style="color:var(--ink-3)">2.356 € zzgl. USt. · Geld zurück, wenn nichts läuft</span>
+        <span class="price-inline" style="color:var(--ink-3)">2.356 € netto je Person · Geld zurück, wenn nichts läuft</span>
       </div>
     </div>
   </div>

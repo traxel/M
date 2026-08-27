@@ -13,7 +13,8 @@ Stand: 2026-08-27. Ersetzt den Remote-Rahmen aus `funnel/funnel.md` und
 | Städte | Hamburg · Köln · München |
 | Zeitraum | November 2026 |
 | Dauer | ein Tag, 09:00–17:00 |
-| Preis | **2.356 €** |
+| Preis | **2.356 € netto** je Person (bestätigt 27.08.) |
+| Teilnehmer | max. **12** je Stadt — Zahl gehört ausdrücklich in die Kommunikation |
 | Pausen | 30 Min Frühstück · 60 Min Mittag · 45 Min Kaffee |
 | Vormittag | Grundlagen: Code, Codex (OpenAI) vs. Claude (Anthropic), Cowork/Work, Artefakte, Skills, Connectoren, MCPs, APIs |
 | Nachmittag | fünf LinkedIn-Agenten bauen |
@@ -29,6 +30,29 @@ Titel der Schulung: **So bauen Sie sich Ihre Vertriebsagenten — Schritt für S
 `funnel/funnel.md` und `funnel/workshop-5-agenten.md` beschreiben einen
 Remote-Workshop zu 490 € (Pilot) bzw. 890 €. Das ist überholt. Beide
 Dokumente bleiben als Herleitung stehen, gelten aber nicht mehr als Rahmen.
+
+### Das Versprechen ist enger gefasst worden
+
+Nicht mehr „fünf Agenten laufen", sondern:
+
+> **Sie haben mindestens einen funktionierenden Agenten selbst programmiert.**
+
+Gebaut werden am Tag weiterhin fünf. Zugesagt wird einer.
+
+Gründe:
+- Fünf Agenten bei zwölf Leuten sind erreichbar, aber nicht garantierbar
+- Einer, am Platz nachgeprüft, ist garantierbar — und die Garantie hängt genau
+  an dem, was nachgeprüft wird
+- „Selbst programmiert" ist für den Marketing- und Vertriebsleiter der stärkere
+  Satz. Er kann ihn am Montag im Haus sagen
+
+**Ein Widerspruch, der dabei aufgelöst werden musste:** Auf derselben Seite
+stand „selbst programmiert" und „Sie müssen nicht programmieren, keine Zeile".
+Beides zusammen ist unglaubwürdig. Aufgelöst so: Eine Programmiersprache
+braucht niemand. Auftrag, Prüflogik und Abbruchregeln schreibt der Teilnehmer
+selbst, in seiner Sprache — und das Ergebnis läuft weiter, wenn er den Rechner
+zuklappt. Das ist ein Programm, und so steht es jetzt auf der Seite und in der
+FAQ.
 
 **Was aus dem alten Rahmen bleibt:**
 - Konstruktionsregel: kein Agent klickt auf Senden
@@ -68,7 +92,7 @@ Bei 12 Plätzen und 2.356 € je Person:
 
 | | |
 |---|---|
-| Ein voller Tag | 28.272 € |
+| Ein voller Tag (12 × 2.356 € netto) | 28.272 € |
 | Drei Städte voll | **84.816 €** |
 | Halb voll (6 je Stadt) | 42.408 € |
 | Deckung ab | ca. 2 Teilnehmern je Stadt (Raum + Catering + Anreise) |
@@ -91,8 +115,6 @@ nicht nacheinander.
 
 | Punkt | Warum es blockiert |
 |---|---|
-| **Preis netto oder brutto?** | 1.980 € × 1,19 = 2.356,20 €. Die Zahl sieht nach einem Bruttopreis aus. Auf der Landingpage steht sie derzeit als „2.356 € zzgl. USt." — **Annahme, nicht geprüft.** Falsch herum ausgezeichnet ist ein Preisfehler auf einer öffentlichen Seite |
-| **Teilnehmerzahl je Stadt** | nicht genannt. Angenommen: max. 12, wie im alten Rahmen |
 | **Konkrete Termine** | Vorschlag: Hamburg Di 10.11. · Köln Di 17.11. · München Di 24.11. Alle dienstags, eine Woche Abstand |
 | **Räume** | nicht gebucht. Drei Tagungsräume für 12 Personen plus Catering |
 | **Zahlungsweg** | weiterhin ungeklärt (siehe `verifiziert.md`) |
