@@ -95,10 +95,11 @@ def videos(uploads: str, want: int) -> list[dict]:
         token = d.get("nextPageToken")
         if not token:
             break
+    sel = ids[:want]
     out = []
-    for i in range(0, len(ids[:want]), 50):
+    for i in range(0, len(sel), 50):
         d = call("videos", 1, part="snippet,statistics,contentDetails",
-                 id=",".join(ids[i:i + 50]))
+                 id=",".join(sel[i:i + 50]))
         out += d.get("items", [])
     return out
 
@@ -122,8 +123,10 @@ def main() -> None:
     ap.add_argument("channels", nargs="+")
     ap.add_argument("--sample", type=int, default=30, help="Videos fuer den Median")
     ap.add_argument("--min", type=float, default=2.0, help="Ratio ab der ausgegeben wird")
-    ap.add_argument("--min-age", type=int, default=14, help="Tage, bevor ein Video zaehlt")
-    ap.add_argument("--max-age", type=int, default=365)
+    ap.add_argument("--min-age", type=int, default=14,
+                    help="Untergrenze des Vergleichsfensters in Tagen")
+    ap.add_argument("--max-age", type=int, default=180,
+                    help="Obergrenze des Vergleichsfensters in Tagen")
     ap.add_argument("--shorts", action="store_true", help="Shorts mitzaehlen")
     a = ap.parse_args()
 
@@ -137,30 +140,44 @@ def main() -> None:
             print(f"  {title}: keine Videos gefunden")
             continue
 
-        clean = []
+        # Ein Video zaehlt nur, wenn es kein Short ist UND im Vergleichsfenster
+        # liegt. Beides gilt fuer den Median genauso wie fuer die Outlier —
+        # sonst werden Videos verglichen, die unterschiedlich lange Zeit
+        # hatten, Views zu sammeln, und alte gewinnen automatisch.
+        clean, shorts_raus, ausserhalb = [], 0, 0
         for v in vids:
             secs = iso_seconds(v.get("contentDetails", {}).get("duration"))
             if not a.shorts and secs and secs <= 60:
+                shorts_raus += 1
                 continue
+            pub = datetime.fromisoformat(v["snippet"]["publishedAt"].replace("Z", "+00:00"))
+            age = (now - pub).days
+            if not (a.min_age <= age <= a.max_age):
+                ausserhalb += 1
+                continue
+            v["_age"] = age
             clean.append(v)
-        if not clean:
+
+        if len(clean) < 5:
+            print(f"\n{title}: nur {len(clean)} Videos im Fenster "
+                  f"{a.min_age}-{a.max_age} Tage — zu wenig fuer einen Median. "
+                  f"({shorts_raus} Shorts, {ausserhalb} ausserhalb des Fensters). "
+                  f"Fenster mit --max-age weiten oder --sample erhoehen.")
             continue
 
         views = [int(v["statistics"].get("viewCount", 0)) for v in clean]
         med = statistics.median(views) or 1
 
         print(f"\n{title}  —  {de(subs)} Abonnenten"
-              f"  ·  Median {de(med)} Views  ·  {len(clean)} Videos")
+              f"  ·  Median {de(med)} Views"
+              f"  ·  {len(clean)} Videos im Fenster {a.min_age}-{a.max_age} Tage"
+              f"  ({shorts_raus} Shorts und {ausserhalb} ausserhalb aussortiert)")
 
         for v in clean:
-            pub = datetime.fromisoformat(v["snippet"]["publishedAt"].replace("Z", "+00:00"))
-            age = (now - pub).days
-            if not (a.min_age <= age <= a.max_age):
-                continue
             vw = int(v["statistics"].get("viewCount", 0))
             ratio = vw / med
             if ratio >= a.min:
-                rows.append((ratio, title, v["snippet"]["title"], vw, age,
+                rows.append((ratio, title, v["snippet"]["title"], vw, v["_age"],
                              f"https://youtu.be/{v['id']}"))
 
     print("\n" + "=" * 78)

@@ -42,7 +42,7 @@ erreichbar. Umgekehrt gilt das nicht. Details: `verifiziert.md`.
 
 ```bash
 YT_API_KEY=$(security find-generic-password -s yt-api-key -w) \
-  python3 agenten/scripts/yt_outlier.py @BenAI
+  python3 agenten/scripts/yt_outlier.py @benai92
 ```
 
 Erwartet: Kanal, Abonnenten, Median-Views, darunter die Videos mit
