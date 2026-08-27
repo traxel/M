@@ -129,3 +129,38 @@ Videos und den Median des Kanals. Beides liefert nur die Data API.
 **Damit ist der Unterschied klar:** Der alte Scanner beantwortete „worum geht
 es in diesen Videos". Der neue soll beantworten „was hat funktioniert und
 warum". Das ist eine andere Frage und braucht andere Daten.
+
+
+---
+
+## Selbsttest — so siehst du sofort, ob der Key läuft
+
+Diese Adresse in die Browserzeile, `DEIN_KEY` ersetzen:
+
+```
+https://www.googleapis.com/youtube/v3/videos?part=statistics&id=dQw4w9WgXcQ&key=DEIN_KEY
+```
+
+**Diesen Endpunkt habe ich selbst aufgerufen** — ohne Key kam die 403 mit
+„Please use API Key". Die Adresse stimmt also.
+
+**Was du sehen solltest:**
+```json
+{ "items": [ { "statistics": { "viewCount": "…", "likeCount": "…" } } ] }
+```
+Eine Zahl bei `viewCount` heißt: fertig.
+
+**Wenn stattdessen ein Fehler kommt, sagt er dir was fehlt:**
+
+| Meldung enthält | Bedeutung |
+|---|---|
+| „has not been used in project… or it is disabled" | API noch nicht aktiviert — Schritt 3 fehlt |
+| „API key not valid" | Tippfehler beim Kopieren |
+| „requests from referer … are blocked" | Einschränkung zu eng gesetzt |
+
+Kein Rätselraten: Die Fehlermeldung nennt den Grund.
+
+## Und dann
+
+Sag mir Bescheid, wie du mir den Key gibst. Ich rufe die API hier auf und
+zeige dir echte Zahlen zu einem echten Kanal — Views, Median, Outlier-Ratio.
