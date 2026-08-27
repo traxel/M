@@ -16,3 +16,10 @@ Persistente Notizen für die Zusammenarbeit mit Mariana (Sometra).
   Verkaufsgegenstand. Begründung und Angebotsleiter:
   `entscheidungen/2026-08-26_schulung-statt-plattform.md`, Funnel und Preise:
   `funnel/funnel.md`.
+
+## Zusammenarbeit
+
+- **Kurz antworten, in Bullets** (Stand: 2026-08-27). Keine langen Fließtexte,
+  keine Wiederholung dessen, was schon in den Dokumenten steht. Ergebnis,
+  Zahlen, offene Entscheidung — mehr nicht. Ausführliches gehört ins Dokument,
+  nicht in die Antwort.
