@@ -26,21 +26,29 @@ COUNTALL — keinen Median.** Es gibt keine MEDIAN-Funktion.
 Ergebnis unverändert, Rechenweg anders. Der Median kommt vom Agenten, nicht
 von Airtable.
 
-### 2. HyperFrames: Ich kann briefen, nicht bauen
+### 2. HyperFrames — meine Aussage war zu pauschal
 
-Geprüft: Die Skill **`hyperframes` ist in dieser Umgebung nicht vorhanden.**
-`visual-regie` sagt selbst: „Baut nichts selbst — delegiert HF an `hyperframes`."
-Diese Empfängerin fehlt.
+Ich hatte geschrieben: „Ich kann kein animiertes HyperFrame produzieren."
+Richtig ist: **nicht aus dieser Umgebung heraus.** Auf deinem Mac habe ich das
+bereits gemacht.
 
-Was das für das Pipeline-Übersichtsbild heißt:
-- Ich kann den **Brief** schreiben (visual-regie ist da)
-- Ich kann ein **statisches SVG** direkt schreiben — die vorhandenen
-  `04_menschliche-freigabe.svg` und `01_technischer_agent_freigabeprozess.svg`
-  sind genau das
-- Ich kann **kein animiertes HyperFrame** produzieren
+Nachgeprüft, alle drei Wege:
 
-Für ein Titelbild reicht SVG. Für animierte Beats brauchst du deine lokale
-HyperFrames-Umgebung.
+| Prüfung | Ergebnis |
+|---|---|
+| Dateisystem, gesamt (`find / -iname "*hyperframe*"`) | kein Treffer |
+| `ListConnectors` — alle Connectoren des Kontos | Airtable, Canva, Descript, Gmail, Google Calendar, Google Drive, Granola, HubSpot, Microsoft 365, Zoom, Spotify. **Kein HyperFrames** |
+| `ListSkills` mit Stichwort hyperframes | nur `visual-regie`, die dorthin delegiert |
+
+**Das ist keine Fähigkeitsgrenze, sondern eine Umgebungsgrenze.**
+Diese Session läuft in einem Cloud-Container mit einer gesyncten Teilmenge
+deiner Skills. Die HyperFrames-Studio-Engine liegt lokal auf deinem Mac —
+genau wie die Thumbnail-Render-Maschine.
+
+Konsequenz für die Arbeitsteilung:
+- **HyperFrames-Arbeit gehört in eine lokale CLI-Session**, nicht hierher
+- Von hier aus: Brief über `visual-regie`, statisches SVG direkt geschrieben
+- Wenn ein HyperFrame gebraucht wird, sage ich das und du startest lokal
 
 ### 3. Thumbnails: dieselbe Grenze
 
@@ -69,8 +77,48 @@ Was das für den Recherche-Agenten bedeutet:
   nicht wöchentlich. So war es vorgeschlagen, das hält.
 - Die wöchentliche Auswertung bekannter Kanäle läuft über `videos.list` und
   `playlistItems.list` zu 1 Einheit — praktisch kostenlos.
-- **Meine Aussage zu Transkripten war richtig:** fremde Videos gibt die API
-  nicht her. Der Handdurchgang für die ersten 30 Sekunden bleibt.
+- Zu Transkripten: Die API gibt fremde Videos nicht her — das stimmt. Dass
+  daraus ein Handdurchgang folgt, stimmt **nicht**. Siehe unten.
+
+### Transkripte — der Weg über Audio funktioniert
+
+Ich hatte eine Sackgasse behauptet, weil ich nur die YouTube-API geprüft habe
+und nicht die Werkzeuge daneben. Du hattest recht: über Audio ist es gelöst.
+
+Geprüft am Schema der verbundenen Descript-Werkzeuge, nicht aus der Doku:
+
+- `import_media` **transkribiert beim Import.** Das Feld `language` ist dort
+  ausdrücklich „ISO 639-1 language code for transcription", mit
+  Spracherkennung wenn leer.
+- `export_transcript` liefert `txt`, `markdown`, `html`, `rtf` und **`srt`** —
+  mit Zeitmarken, wahlweise auf Absätze, Sprecherwechsel oder in festem
+  Intervall.
+
+`srt` mit Zeitmarken ist für die Hook-Analyse genau richtig: die ersten
+30 Sekunden sind darin ein abgegrenzter Block.
+
+**Die Grenze, die bleibt** — auch am Schema geprüft:
+`import_media` nimmt laut eigener Beschreibung „URLs (direct links, Google
+Drive, Dropbox)". **YouTube-Links stehen dort nicht.** Die Audiodatei muss
+also vorliegen oder in Drive liegen.
+
+Und in dieser Umgebung: kein `yt-dlp`, kein `ffmpeg`, `youtube.com` nicht
+erreichbar. **Das Ziehen der Audiospur passiert bei dir lokal**, danach
+übernimmt Descript von hier aus.
+
+Damit ist der Handdurchgang vom Tisch. Der Ablauf ist:
+Audio lokal ziehen → in Drive oder direkt zu Descript → `srt` exportieren →
+Hook-Analyse automatisch.
+
+### googleapis.com ist erreichbar — anders als gedacht
+
+`https://www.googleapis.com/youtube/v3/videos` beantwortet Anfragen. Die 403
+kommt **von Google, nicht vom Proxy**: „Method doesn't allow unregistered
+callers... Please use API Key."
+
+Das heißt: **Mit einem API-Key kann ich den Recherche-Agenten von hier aus
+bauen und testen**, nicht nur beschreiben. Nur die Dokumentationsseiten
+(`developers.google.com`) sind blockiert, die API selbst nicht.
 
 ### Zugänge, die ich tatsächlich habe
 
@@ -90,15 +138,29 @@ Vorhandene Bases: `LinkedIn Outreach`, `LinkedIn Agent`,
 
 ## Grenze dieser Umgebung
 
-**Herstellerdokumentation ist direkt nicht erreichbar.** Getestet:
-`developers.google.com`, `airtable.com`, `support.airtable.com` — alle vom
-Egress-Proxy blockiert, auch über curl.
+**Herstellerdokumentation ist blockiert, die APIs selbst oft nicht.**
 
-Verifizieren kann ich also über zwei Wege:
-1. **Websuche** — liefert Zusammenfassungen, keine Primärquelle
-2. **Den Aufruf selbst** — ich rufe das Werkzeug auf und sehe, was zurückkommt
+| Ziel | Ergebnis |
+|---|---|
+| `developers.google.com` | blockiert |
+| `airtable.com`, `support.airtable.com` | blockiert |
+| `outlierkit.com` und ähnliche | blockiert |
+| **`www.googleapis.com`** | **erreichbar**, antwortet mit Googles eigener Fehlermeldung |
+| `youtube.com` | nicht erreichbar |
 
-Weg 2 ist der belastbare. Wo er möglich ist, nehme ich ihn.
+Der Unterschied ist wichtig: Eine blockierte Doku heißt nicht, dass der Dienst
+nicht nutzbar ist.
+
+Prüfreihenfolge, von belastbar nach schwach:
+
+1. **Den Dienst aufrufen** und sehen, was zurückkommt
+2. **Das Werkzeug-Schema lesen** — bei verbundenen Connectoren steht dort, was
+   der Anbieter tatsächlich zusagt (so ist der Descript-Weg oben belegt)
+3. **Umgebung prüfen** — `ListConnectors`, `ListSkills`, Dateisystem, curl
+4. **Websuche** — Zusammenfassungen, keine Primärquelle
+
+Erst wenn 1 bis 3 nichts hergeben, zählt 4 — und dann sage ich dazu, dass es
+nur Websuche war.
 
 Für Anbieter, mit denen wir noch nicht verbunden sind (Apify, HeyGen, Kling,
 Stripe), kann ich in dieser Umgebung **nur über Websuche prüfen**. Das sage ich
@@ -114,6 +176,7 @@ dann dazu, statt es als gesichert zu verkaufen.
 | Zahlungsweg für den Workshop | Unbekannt, ob Stripe oder etwas anderes vorhanden ist |
 | Screen-Recording-Werkzeug | Unbekannt, womit du aufnimmst |
 | LinkedIn-Content-Scanner | Beruht auf deiner Aussage, dass die Agenten Profile erreichen. Die Agenten-Prompts selbst habe ich nie gesehen — sie liegen lokal, nicht in Drive |
-| Kalender-/Buchungswerkzeug | Unbekannt |
+| Kalender-/Buchungswerkzeug | Google Calendar ist verbunden — ob du damit buchen lassen willst, ist offen |
+| Kling, HeyGen, Apify | Keine Verbindung vorhanden. Prüfung dort nur über Websuche möglich, das sage ich künftig dazu |
 
 Diese fünf klären wir, bevor ich etwas darauf aufbaue.

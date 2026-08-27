@@ -31,5 +31,11 @@ Persistente Notizen für die Zusammenarbeit mit Mariana (Sometra).
   den Aufruf des Werkzeugs selbst, sonst durch die Doku des Anbieters. Ist
   eine Prüfung nicht möglich, wird die Annahme ausdrücklich als ungeprüft
   benannt. Stand der Prüfungen und offene Annahmen: `verifiziert.md`.
-- Herstellerdokus sind aus der Remote-Umgebung nicht erreichbar
-  (Egress-Proxy). Verifikation läuft über Websuche oder direkten Tool-Aufruf.
+- Prüfreihenfolge: (1) Dienst aufrufen, (2) Werkzeug-Schema des verbundenen
+  Connectors lesen, (3) Umgebung prüfen (`ListConnectors`, `ListSkills`,
+  Dateisystem, curl), (4) Websuche. Nur wenn 1–3 nichts hergeben, zählt 4 —
+  und dann wird dazugesagt, dass es nur Websuche war.
+- **Zwei Umgebungen unterscheiden.** Remote-Cloud-Sessions haben nur eine
+  gesyncte Teilmenge der Skills. HyperFrames-Engine und Thumbnail-Render
+  laufen lokal auf dem Mac. „Geht nicht" heißt oft „geht nicht von hier" —
+  das ist zu unterscheiden, bevor etwas ausgeschlossen wird.
