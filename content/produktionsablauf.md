@@ -55,17 +55,26 @@ was es schneiden soll.
 
 ---
 
-## Was ich noch nicht weiß — und was den Ablauf ändert
+## Dein Setup — beantwortet 27.08.
 
-| Frage | Warum sie zählt |
+| | |
 |---|---|
-| **Womit nimmst du Screen auf?** | Bestimmt Auflösung, Format und ob Mauszeiger und Klicks sichtbar sind |
-| **Womit nimmst du dich selbst auf?** | Kamera, Licht, Ton — bestimmt, ob Talking Head und Screen getrennt oder gleichzeitig laufen |
-| **Schneidest du überhaupt in Descript?** | Der Connector ist verbunden, aber ob du damit arbeitest, weiß ich nicht |
-| **Wie kommt lokales Material nach Descript?** | `import_media` nimmt URLs oder Direkt-Upload. Von hier komme ich an deine Dateien nicht heran — das müsste die lokale Session oder du selbst machen |
+| Screen | **OBS** |
+| Talking Head | **iPhone-Rückkamera + externes Mikro** |
+| Schnitt | **CapCut** (überwiegend), sonst VEED.io |
+| Footage | **Kling**, Pexels, Stock-Anbieter |
+| Descript | **fällt raus** — Zugriff nur über Fal, und alles ist auf Deutsch |
 
-Diese vier klären wir, bevor ich die Aufnahmeliste schreibe. Sonst schreibe
-ich eine Liste für ein Setup, das es nicht gibt.
+### Was das am Ablauf ändert
+
+- **Kein Descript.** Schritt 8 heißt jetzt: Schnitt in CapCut, von dir.
+  Ich liefere die Schnittanweisung als Liste, keine Werkzeug-Automatik.
+- **Zwei getrennte Quellen** — OBS für Screen, iPhone für Talking Head. Die
+  Aufnahmeliste muss beides getrennt ausweisen, inklusive Reihenfolge.
+- **Ton kommt vom externen Mikro**, nicht aus OBS. In CapCut wird auf den
+  Ton synchronisiert, nicht auf das Bild.
+- **Kling ist gesetzt** für alles, was nicht Screen und nicht du ist. Prompts
+  schreibe ich, ausgeführt wird lokal über `media-gen`.
 
 ---
 
