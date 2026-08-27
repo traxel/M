@@ -10,6 +10,7 @@ Aufruf:
     YT_API_KEY=... python3 yt_outlier.py UCxxxx            # Kanal-ID
     YT_API_KEY=... python3 yt_outlier.py @handle           # Handle
     YT_API_KEY=... python3 yt_outlier.py @a @b --min 2.0
+    YT_API_KEY=... python3 yt_outlier.py @a --format short   # Shorts getrennt
 
 Der Schluessel kommt aus YT_API_KEY oder aus ~/.yt_api_key.
 Er wird nie ausgegeben und nie protokolliert.
@@ -127,7 +128,10 @@ def main() -> None:
                     help="Untergrenze des Vergleichsfensters in Tagen")
     ap.add_argument("--max-age", type=int, default=180,
                     help="Obergrenze des Vergleichsfensters in Tagen")
-    ap.add_argument("--shorts", action="store_true", help="Shorts mitzaehlen")
+    ap.add_argument("--format", choices=["long", "short", "alle"], default="long",
+                    help="long = nur lange Videos (Standard), short = nur Shorts, "
+                         "alle = beides gemeinsam. 'alle' verzerrt den Median, "
+                         "weil Shorts ihre Views aus einer anderen Quelle bekommen.")
     a = ap.parse_args()
 
     now = datetime.now(timezone.utc)
@@ -144,11 +148,15 @@ def main() -> None:
         # liegt. Beides gilt fuer den Median genauso wie fuer die Outlier —
         # sonst werden Videos verglichen, die unterschiedlich lange Zeit
         # hatten, Views zu sammeln, und alte gewinnen automatisch.
-        clean, shorts_raus, ausserhalb = [], 0, 0
+        clean, format_raus, ausserhalb = [], 0, 0
         for v in vids:
             secs = iso_seconds(v.get("contentDetails", {}).get("duration"))
-            if not a.shorts and secs and secs <= 60:
-                shorts_raus += 1
+            ist_short = bool(secs) and secs <= 60
+            if a.format == "long" and ist_short:
+                format_raus += 1
+                continue
+            if a.format == "short" and not ist_short:
+                format_raus += 1
                 continue
             pub = datetime.fromisoformat(v["snippet"]["publishedAt"].replace("Z", "+00:00"))
             age = (now - pub).days
@@ -158,20 +166,24 @@ def main() -> None:
             v["_age"] = age
             clean.append(v)
 
+        anderes = {"long": "Shorts", "short": "lange Videos",
+                   "alle": "nichts"}[a.format]
         if len(clean) < 5:
             print(f"\n{title}: nur {len(clean)} Videos im Fenster "
                   f"{a.min_age}-{a.max_age} Tage — zu wenig fuer einen Median. "
-                  f"({shorts_raus} Shorts, {ausserhalb} ausserhalb des Fensters). "
+                  f"({format_raus} {anderes}, {ausserhalb} ausserhalb des Fensters). "
                   f"Fenster mit --max-age weiten oder --sample erhoehen.")
             continue
 
         views = [int(v["statistics"].get("viewCount", 0)) for v in clean]
         med = statistics.median(views) or 1
 
+        label = {"long": "lange Videos", "short": "Shorts",
+                 "alle": "Videos"}[a.format]
         print(f"\n{title}  —  {de(subs)} Abonnenten"
               f"  ·  Median {de(med)} Views"
-              f"  ·  {len(clean)} Videos im Fenster {a.min_age}-{a.max_age} Tage"
-              f"  ({shorts_raus} Shorts und {ausserhalb} ausserhalb aussortiert)")
+              f"  ·  {len(clean)} {label} im Fenster {a.min_age}-{a.max_age} Tage"
+              f"  ({format_raus} {anderes} und {ausserhalb} ausserhalb aussortiert)")
 
         for v in clean:
             vw = int(v["statistics"].get("viewCount", 0))
