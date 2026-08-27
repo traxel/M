@@ -7,8 +7,8 @@ Status: Vorschlag zur Freigabe.
 
 ## Die Zahl, die den Plan bestimmt
 
-Von heute bis Hamburg: **75 Tage. 10,7 Wochen.**
-Bis München: 89 Tage.
+Von heute bis Hamburg (29.10.): **63 Tage. 9 Wochen.**
+Bis Köln (05.11.): 70 Tage.
 
 Zu füllen sind **36 Plätze zu je 2.356 €**.
 
@@ -105,9 +105,9 @@ Alle in Marianas Stimme. Leser wird gesiezt. Keine Emojis, keine Hashtag-Wolke.
 >
 > Drei Tage, drei Städte:
 >
-> Hamburg, 10. November
-> Köln, 17. November
-> München, 24. November
+> Hamburg, 29. Oktober
+> München, 2. November
+> Köln, 5. November
 >
 > Jeweils 09:00 bis 17:00 Uhr. Zwölf Plätze pro Stadt.
 >
@@ -226,8 +226,8 @@ Alle in Marianas Stimme. Leser wird gesiezt. Keine Emojis, keine Hashtag-Wolke.
 > Kommentieren Sie „Prüfliste", dann schicke ich sie Ihnen. Sie brauchen dafür
 > nichts zu buchen.
 >
-> Wer den Agenten lieber an einem Tag mit mir baut: Hamburg am 10.11., Köln am
-> 17.11., München am 24.11. Zwölf Plätze je Stadt, weil ich bei zwölf Leuten
+> Wer den Agenten lieber an einem Tag mit mir baut: Hamburg am 29.10., München am
+> 02.11., Köln am 05.11. Zwölf Plätze je Stadt, weil ich bei zwölf Leuten
 > noch an jeden Platz komme.
 
 ---
@@ -237,7 +237,7 @@ Alle in Marianas Stimme. Leser wird gesiezt. Keine Emojis, keine Hashtag-Wolke.
 | Was | Wer |
 |---|---|
 | ~~Preis bestätigen~~ — **2.356 € netto, bestätigt 27.08.** | erledigt |
-| Termine bestätigen (10./17./24.11., dienstags) | Mari |
+| ~~Termine bestätigen~~ — **29.10. HH, 02.11. M, 05.11. K, bestätigt 27.08.** | erledigt |
 | Räume in drei Städten | Mari |
 | Prüfliste „10 Kandidaten" tatsächlich bauen — Post 5 verspricht sie | Ich, sobald die Termine stehen |
 | Landingpage online stellen, Link für Post 1 | offen: System unbekannt, siehe `verifiziert.md` |

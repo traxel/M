@@ -1,6 +1,6 @@
 # Tagesplan — "So bauen Sie sich Ihre Vertriebsagenten"
 
-Präsenz. Ein Tag, 09:00–17:00. Hamburg · Köln · München, November 2026.
+Präsenz. Ein Tag, 09:00–17:00. Hamburg 29.10. · München 02.11. · Köln 05.11.2026.
 Stand: 2026-08-27. Status: Vorschlag zur Freigabe.
 
 ---

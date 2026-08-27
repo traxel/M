@@ -10,8 +10,8 @@ Stand: 2026-08-27. Ersetzt den Remote-Rahmen aus `funnel/funnel.md` und
 | | |
 |---|---|
 | Format | **Präsenz**, nicht remote |
-| Städte | Hamburg · Köln · München |
-| Zeitraum | November 2026 |
+| Städte | Hamburg · München · Köln |
+| Termine | Hamburg Do 29.10. · München Mo 02.11. · Köln Do 05.11.2026 |
 | Dauer | ein Tag, 09:00–17:00 |
 | Preis | **2.356 € netto** je Person (bestätigt 27.08.) |
 | Teilnehmer | max. **12** je Stadt — Zahl gehört ausdrücklich in die Kommunikation |
@@ -115,7 +115,7 @@ nicht nacheinander.
 
 | Punkt | Warum es blockiert |
 |---|---|
-| **Konkrete Termine** | Vorschlag: Hamburg Di 10.11. · Köln Di 17.11. · München Di 24.11. Alle dienstags, eine Woche Abstand |
+| **Konkrete Termine** | **Bestätigt 27.08.:** Hamburg Do 29.10. · München Mo 02.11. · Köln Do 05.11.2026 |
 | **Räume** | nicht gebucht. Drei Tagungsräume für 12 Personen plus Catering |
 | **Zahlungsweg** | weiterhin ungeklärt (siehe `verifiziert.md`) |
 | **Landingpage-System** | weiterhin ungeklärt. Die Seite liegt als eigenständige HTML-Datei vor und ist damit unabhängig vom System |
