@@ -22,7 +22,11 @@ Persistente Notizen für die Zusammenarbeit mit Mariana (Sometra).
 - **Kurz antworten, in Bullets** (Stand: 2026-08-27). Keine langen Fließtexte,
   keine Wiederholung dessen, was schon in den Dokumenten steht. Ergebnis,
   Zahlen, offene Entscheidung — mehr nicht. Ausführliches gehört ins Dokument,
-  nicht in die Antwort.
+  nicht in die Antwort. **Gilt ausnahmslos, auch bei großen Lieferungen.**
+- **Landingpage nur auf Ansage ändern** (Stand: 2026-08-27). Die Seite liegt in
+  `landingpage/index.html` und ist als Artifact veröffentlicht. Mariana nennt die
+  Änderung, ich setze um und veröffentliche neu. Keine eigenmächtigen
+  Verbesserungen, keine ungefragten Textvorschläge.
 
 ## Arbeitsweise
 
