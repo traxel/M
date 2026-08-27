@@ -42,6 +42,15 @@ Persistente Notizen für die Zusammenarbeit mit Mariana (Sometra).
   `npx skills add heygen-com/hyperframes` und `apt-get install -y ffmpeg`
   (ffprobe wird gebraucht, Playwright-ffmpeg reicht nicht). End-to-end
   geprüft am 2026-08-27. Beides ist pro Container neu nötig.
+- **Kosten bei HyperFrames/HeyGen:** Erstellen und **lokal** rendern kosten kein
+  Geld (kein HeyGen-Konto nötig, geprüft). Geld kostet nur `cloud render`
+  (pro Credit) sowie `lambda`/`cloudrun` über AWS bzw. GCP. Für `publish`
+  ist es ungeklärt. Token und Geld laufen gegenläufig: Schreiben kostet
+  Token, lokal rendern kostet nichts, Cloud kostet Geld statt Token.
+  Also: **so oft lokal iterieren wie nötig.**
+- **Connectoren laufen nicht über den Container-Egress.** Airtable ist per
+  Connector nutzbar, obwohl `airtable.com` per curl nicht erreichbar ist.
+  „curl kommt nicht durch" heißt also nicht „Connector geht nicht".
 - **Zwei Umgebungen unterscheiden.** Remote-Cloud-Sessions haben nur eine
   gesyncte Teilmenge der Skills. HyperFrames-Engine und Thumbnail-Render
   laufen lokal auf dem Mac. „Geht nicht" heißt oft „geht nicht von hier" —
