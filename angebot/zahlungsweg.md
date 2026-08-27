@@ -103,7 +103,52 @@ Plätzen ist das mehr Apparat als Nutzen.
 
 ---
 
-## Empfehlung: zweigleisig
+## Entschieden für die erste Runde: gar kein Anbieter
+
+Stand 27.08.: Mariana hat online noch nie etwas verkauft. Digistore war
+einmal im Einsatz und war zu teuer — was sich mit der Rechnung oben deckt:
+bei 2.356 € sind das 120–165 € je Platz, über 36 Plätze 4.300–6.000 €.
+
+**Daraus folgt nicht, dass ein Zahlungsanbieter her muss. Daraus folgt,
+dass für diese Runde keiner gebraucht wird.**
+
+Der Grund: Sometra verkauft längst. Retainer und Kundenprojekte werden
+in Rechnung gestellt und überwiesen. Ein Workshopplatz ist dasselbe
+Geschäft, nur öfter — 36 Rechnungen statt drei. Es gibt hier nichts neu zu
+lernen, und „online verkaufen" ist bei diesem Käufer ohnehin das falsche
+Bild: Ein Geschäftsführer, der 2.356 € freigibt, klickt nicht auf Kaufen.
+Er leitet eine Rechnung an die Buchhaltung weiter.
+
+### Der ganze Ablauf, ohne ein einziges neues Werkzeug
+
+| Schritt | Womit |
+|---|---|
+| 1. Anfrage | Der Knopf auf der Landingpage öffnet eine Mail. Reicht für 36 Plätze |
+| 2. Erfassen | Ein Formular oder eine Tabelle in Google, oder eine Airtable-Tabelle. Beides ist verbunden und geprüft |
+| 3. Rechnung | Aus dem Werkzeug, mit dem heute schon Kunden abgerechnet werden |
+| 4. Zahlung | Überweisung. Der Platz ist reserviert, verbindlich wird er mit dem Eingang |
+| 5. Nachfassen | Ein Blick in die Tabelle, einmal die Woche |
+
+Kosten: **0 €.** Aufwand: bei 36 Buchungen über zehn Wochen überschaubar.
+
+### Was dabei fehlt — und ob es fehlt
+
+- **Kartenzahlung.** Ihre Käufer wollen sie nicht. Sie wollen eine Rechnung
+  mit ausgewiesener Umsatzsteuer
+- **Sofortiger Zahlungseingang.** Stattdessen: Reservierung, die mit dem
+  Geldeingang verbindlich wird. Steht so in der Bestätigungsmail
+- **Automatik.** Bei 36 Buchungen ist Handarbeit billiger als jede Gebühr
+
+### Wann ein Anbieter doch sinnvoll wird
+
+Sobald etwas Günstigeres an Einzelpersonen verkauft wird — die
+Aufzeichnung, ein kleines Produkt aus der Live-Session, die Community aus
+Bonus 2. Da lohnt sich Automatik, weil viele kleine Beträge anfallen.
+Nicht bei zwölf Firmenrechnungen je Stadt.
+
+---
+
+## Empfehlung, wenn es doch zweigleisig sein soll
 
 **Standardweg — Rechnung.**
 Bei Buchung geht eine Rechnung raus, zahlbar sofort, spätestens sieben Tage
@@ -162,7 +207,8 @@ zwei Jahren ein zweites Mal umgestellt.
 
 | Punkt | Warum |
 |---|---|
-| **Welches Buchhaltungstool läuft heute?** | Unbekannt. Wenn schon eines da ist, entfällt die halbe Entscheidung |
+| **Welches Buchhaltungstool läuft heute?** | Unbekannt. Es muss eines geben, weil Kundenrechnungen laufen. Damit ist die Entscheidung für die erste Runde erledigt |
+| **AGB und Stornoregel** | Bei B2B gibt es kein Widerrufsrecht — das gilt nur für Verbraucher. Dafür braucht es eine eigene Regel, was bei Absage passiert. Fehlt bisher komplett |
 | **Stornoregel** | Bis wann kostenfrei, danach welcher Anteil? Bei Präsenz mit Catering nötig |
 | **Anzahlung oder voller Betrag?** | Bei 2.356 € ist eine Anzahlung ein Kompromiss, wenn jemand nicht sofort voll zahlen will |
 | **Steuerberater bestätigen lassen** | Umsatzsteuer und Rechnungspflichtangaben, vor der ersten Rechnung |
