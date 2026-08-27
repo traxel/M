@@ -192,6 +192,40 @@ p{margin:0 0 16px}
 .incl li::before{content:"—"; position:absolute; left:0; color:var(--accent)}
 
 /* ---------- FAQ ---------- */
+.cta-mid{
+  display:flex; flex-wrap:wrap; gap:12px 18px; align-items:center;
+  margin-top:38px; padding-top:26px; border-top:1px solid var(--line);
+}
+.band .cta-mid{border-top-color:var(--band-line)}
+.cta-mid .hint{font-family:"IBM Plex Mono",monospace; font-size:12.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3)}
+.band .cta-mid .hint{color:var(--band-ink-2)}
+
+.bonus{display:grid; gap:1px; background:var(--band-line); border:1px solid var(--band-line); border-radius:4px; overflow:hidden; margin-top:30px}
+.bonus .b{
+  background:var(--band-card); display:grid; grid-template-columns:auto 1fr auto; gap:0 20px;
+  padding:20px 24px; align-items:baseline;
+}
+.bonus .tag{
+  font-family:"IBM Plex Mono",monospace; font-size:11.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--accent); white-space:nowrap;
+}
+.bonus .t{color:var(--band-ink); font-weight:600; font-size:16.5px; margin:0}
+.bonus .t small{display:block; font-weight:400; font-size:14.5px; color:var(--band-ink-2); margin-top:4px; line-height:1.5}
+.bonus .w{
+  font-family:"IBM Plex Mono",monospace; font-size:14px; color:var(--band-ink-2);
+  font-variant-numeric:tabular-nums; white-space:nowrap;
+}
+.bonus .sum{background:var(--band); grid-template-columns:1fr auto}
+.bonus .sum .t{font-family:Montserrat,sans-serif; font-weight:800}
+.bonus .sum .w{color:var(--accent); font-size:17px; font-weight:600}
+
+.reveal-panel[hidden]{display:none}
+.reveal-panel{margin-top:22px}
+@media (max-width:640px){
+  .bonus .b{grid-template-columns:1fr; gap:6px}
+  .bonus .sum{grid-template-columns:1fr}
+}
+
 .faq{margin-top:30px; border-top:1px solid var(--line)}
 details{border-bottom:1px solid var(--line)}
 summary{
@@ -253,9 +287,9 @@ footer a{color:var(--band-ink)}
     </div>
 
     <div class="cta-row">
-      <a class="btn" href="#termine">Platz sichern</a>
+      <a class="btn" href="#angebot">Platz sichern</a>
       <a class="btn btn-ghost" href="#tag">Den Tag ansehen</a>
-      <span class="price-inline">2.356 € netto je Person · Geld zurück, wenn nichts läuft</span>
+      <span class="price-inline">Geld zurück, wenn nichts läuft</span>
     </div>
   </div>
 </header>
@@ -267,63 +301,69 @@ footer a{color:var(--band-ink)}
       <p class="eyebrow">Von 0 auf eigener Agent. An einem Arbeitstag.</p>
       <h2>Einen Agenten, den Sie selbst programmiert haben.</h2>
       <p class="lead">MCP, CLI, Skills, Agenten — alles noch Fremdwörter? Ich erkläre Ihnen Schritt für Schritt, was Sie wissen müssen, was nicht, worauf Sie achten sollten und was Sie getrost ignorieren können.</p>
-      <p>Die fünf sind keine fünf Spielereien. Sie sind ein Ablauf, und jeder übergibt an den nächsten.</p>
+      <p>Sie bekommen alles an die Hand, was Sie brauchen, um KI zu verstehen und richtig anzuwenden. Mit Beispielen aus Ihrem Alltag und mit Anleitungen, die so einfach und visuell sind wie eine IKEA-Anleitung.</p>
+      <p>Wenn Sie den Anschluss an KI nicht verpassen wollen, ist jetzt der Zeitpunkt zu beginnen.</p>
     </div>
 
     <div class="chain">
       <div class="row">
         <div class="n mono">01</div>
         <div>
-          <span class="verb">finden</span>
-          <h3>Such- und Finde-Agent</h3>
-          <p>Findet Entscheider nach Kriterien, die Sie an diesem Tag selbst festlegen: Rollen, Region, Branche. Und legt sie strukturiert ab, damit Sie am Montag nicht wieder bei null anfangen.</p>
+          <h3>Überblick</h3>
+          <p>Was KI heute wirklich kann und was sie nicht kann. Sie hören beides, damit Sie aufhören zu raten, an welcher Stelle in Ihrem Geschäft sich der Einsatz lohnt.</p>
         </div>
       </div>
       <div class="row">
         <div class="n mono">02</div>
         <div>
-          <span class="verb">prüfen</span>
-          <h3>Prüf-Agent</h3>
-          <p>Sortiert aus, bevor jemand angeschrieben wird: Dubletten, unpassende Rollen, Firmen, die nicht zu Ihnen passen. Der unscheinbarste Agent — und der, der Ihnen am meisten Zeit spart.</p>
+          <h3>Unterschiede</h3>
+          <p>ChatGPT, Claude, Codex und was sonst noch im Umlauf ist. Wer kann was, was kostet was, wo sitzt der Haken — damit Sie sich nicht an das erste Werkzeug binden, von dem Sie gehört haben.</p>
         </div>
       </div>
       <div class="row">
         <div class="n mono">03</div>
         <div>
-          <span class="verb">ansprechen</span>
-          <h3>DM-Schreibe-Agent</h3>
-          <p>Schreibt die erste Nachricht aus dem Profil heraus, nicht aus einer Vorlage. Hier lernen Sie den wichtigsten Handgriff des Tages: wie Sie einem Agenten Ihre Tonalität beibringen.</p>
+          <h3>Tools</h3>
+          <p>Skills, Connectoren, MCPs, APIs. Vier Begriffe, hinter denen dieselbe Frage steckt: Wie kommt eine KI an Ihre Daten, ohne dass Sie die Kontrolle darüber abgeben.</p>
         </div>
       </div>
       <div class="row">
         <div class="n mono">04</div>
         <div>
-          <span class="verb">nachfassen</span>
-          <h3>Follow-up-Agent</h3>
-          <p>Erkennt, wer wartet, und entwirft die Folgenachricht aus dem bisherigen Verlauf — damit kein Gespräch einschläft, weil es untergegangen ist.</p>
+          <h3>Anleitung</h3>
+          <p>Ihr Agent steht erst auf Papier, dann im Rechner: Auftrag, Prüfregeln, Ablage, Abbruch. Schritt für Schritt zum Abhaken, damit Sie ihn zuhause noch einmal bauen können.</p>
         </div>
       </div>
       <div class="row">
         <div class="n mono">05</div>
         <div>
-          <span class="verb">sichtbar bleiben</span>
-          <h3>Content-Agent</h3>
-          <p>Recherchiert Themen, bewertet sie nach Relevanz und gibt sie plattformgerecht aus. Ein Kern, zwei Ausgabezweige — nicht vier Agenten für vier Kanäle.</p>
+          <h3>Agent</h3>
+          <p>Sie bauen ihn, starten ihn und sehen zu, wie er arbeitet. Am Ende komme ich an Ihren Platz und prüfe nach, dass er läuft.</p>
         </div>
       </div>
+    </div>
+
+    <div class="col cta-mid">
+      <a class="btn" href="#angebot">Platz sichern</a>
+      <span class="hint">12 Plätze je Stadt</span>
     </div>
   </div>
 </section>
 
-<!-- ============ DIE REGEL ============ -->
+<!-- ============ DER MOMENT ============ -->
 <section class="band">
   <div class="wrap">
     <div class="col">
-      <p class="eyebrow">Die Regel, die durch den ganzen Tag geht</p>
-      <h2>Kein Agent klickt auf Senden.</h2>
-      <p class="lead">Jeder Agent recherchiert, bewertet, bereitet vor — und legt Ihnen vor. Sie prüfen und lösen aus.</p>
-      <p>Das ist keine Einschränkung, sondern die Konstruktionsregel. Zwei Gründe, und Sie hören beide am Vormittag: Netzwerke wie LinkedIn beschränken Konten, die automatisiert bedient werden. Und eine Nachricht, die ungeprüft rausgeht, ist irgendwann die falsche Nachricht an den falschen Kunden.</p>
-      <p>Wer Ihnen das Gegenteil beibringt, riskiert Ihr Konto.</p>
+      <p class="eyebrow">Der Moment, an dem es klickt</p>
+      <h2>Sie verstehen endlich, wie Agenten funktionieren.</h2>
+      <p class="lead">Nicht als Theorie, sondern so weit, dass Sie am nächsten Morgen selbst entscheiden können: Hier baue ich einen. Hier lohnt es sich nicht.</p>
+      <p>Sie sehen, woraus ein Agent besteht, warum er tut, was er tut, und woran es liegt, wenn er etwas anderes tut. Ab da lesen Sie jede KI-Meldung anders — Sie erkennen, was davon Sie betrifft und was Werbung ist.</p>
+      <p>Und Sie gehen mit der Frage nach Hause, die den Unterschied macht: Welche Aufgabe in meinem Alltag mache ich ab morgen nicht mehr selbst?</p>
+
+      <div class="cta-mid">
+        <a class="btn" href="#angebot">Platz sichern</a>
+        <span class="hint">Hamburg · München · Köln</span>
+      </div>
     </div>
   </div>
 </section>
@@ -334,14 +374,14 @@ footer a{color:var(--band-ink)}
     <div class="col">
       <p class="eyebrow">Der Ablauf</p>
       <h2>Vormittags verstehen Sie es. Nachmittags läuft es.</h2>
-      <p class="lead">345 Minuten Lernzeit. Kein Block ist gestreckt, damit die Rechnung aufgeht.</p>
+      <p class="lead">Vormittags erkläre ich Ihnen alles, wofür ich Monate gebraucht habe. Damit Sie es nicht müssen.</p>
     </div>
 
     <div class="plan reveal">
       <div class="r">
         <div class="time">09:00</div>
-        <p class="what">Grundlagen <span class="dur">90 MIN</span>
-          <small>Was Code ist und was ein Agent ist. Claude und Codex — was welches kann und wann Sie welches brauchen. Cowork, Artefakte, Skills. Connectoren, MCPs und APIs: die Ebene, an der es in der Praxis scheitert.</small>
+        <p class="what">Überblick und Unterschiede <span class="dur">90 MIN</span>
+          <small>Was KI heute kann und was nicht. ChatGPT, Claude, Codex und der Rest: wer kann was, was kostet was, was können Sie getrost ignorieren.</small>
         </p>
       </div>
       <div class="r pause">
@@ -350,8 +390,8 @@ footer a{color:var(--band-ink)}
       </div>
       <div class="r">
         <div class="time">11:00</div>
-        <p class="what">Agent 1 — Such- und Finde-Agent <span class="dur">105 MIN</span>
-          <small>Der lange Block, und der einzige, der so lang sein muss. Hier entsteht das Muster, das die anderen vier wiederverwenden: Zielbild, Rollen, Prüfkriterien, Ablage in Airtable oder Excel, erster Lauf.</small>
+        <p class="what">Tools <span class="dur">105 MIN</span>
+          <small>Skills, Connectoren, MCPs, APIs — an Beispielen aus Ihrem Alltag, nicht an Folien. Am Ende dieses Blocks wissen Sie, wie eine KI an Ihre Daten kommt und wo Sie die Kontrolle behalten.</small>
         </p>
       </div>
       <div class="r pause">
@@ -360,8 +400,8 @@ footer a{color:var(--band-ink)}
       </div>
       <div class="r">
         <div class="time">13:45</div>
-        <p class="what">Agent 2 und Agent 3 <span class="dur">90 MIN</span>
-          <small>Prüf-Agent auf Ihrem eigenen Bestand vom Vormittag. Danach der DM-Schreibe-Agent — mit drei eigenen Nachrichten als Maßstab, an dem er gemessen wird.</small>
+        <p class="what">Anleitung <span class="dur">90 MIN</span>
+          <small>Ihr Agent Schritt für Schritt: Auftrag, Prüfregeln, Ablage, Abbruch. So einfach und visuell wie eine IKEA-Anleitung, zum Abhaken und zum Wiederverwenden.</small>
         </p>
       </div>
       <div class="r pause">
@@ -370,8 +410,8 @@ footer a{color:var(--band-ink)}
       </div>
       <div class="r">
         <div class="time">16:00</div>
-        <p class="what">Agent 4, Agent 5 und Zusammenschalten <span class="dur">60 MIN</span>
-          <small>Follow-up und Content bauen auf dem auf, was schon steht. Zum Schluss: die fünf als ein Ablauf — und was in den ersten zwei Wochen kaputtgeht, bevor es kaputtgeht.</small>
+        <p class="what">Agent <span class="dur">60 MIN</span>
+          <small>Bauen, starten, zusehen. Und die Frage klären, die danach kommt: Was mache ich ab Montag damit, und was geht in den ersten zwei Wochen schief.</small>
         </p>
       </div>
       <div class="r fin">
@@ -381,6 +421,11 @@ footer a{color:var(--band-ink)}
         </p>
       </div>
     </div>
+
+    <div class="col cta-mid">
+      <a class="btn" href="#angebot">Platz sichern</a>
+      <span class="hint">09:00–17:00 Uhr</span>
+    </div>
   </div>
 </section>
 
@@ -389,27 +434,31 @@ footer a{color:var(--band-ink)}
   <div class="wrap">
     <div class="col">
       <p class="eyebrow">Für wen der Tag gebaut ist</p>
-      <h2>Für Menschen, die es schon einmal selbst probiert haben.</h2>
+      <h2>Für alle, die mehr Zeit in ihr Business investieren wollen.</h2>
     </div>
     <div class="two">
       <div>
         <h3>Sie sind hier richtig, wenn</h3>
         <ul class="tick">
-          <li>Sie Geschäftsführer, Vertriebs- oder Marketingleiter im B2B-Mittelstand sind</li>
-          <li>Sie KI schon ausprobiert haben und irgendwo steckengeblieben sind</li>
-          <li>Sie sagen können, welche Kunden Sie suchen</li>
-          <li>Sie einen Tag freiräumen können — und danach selbst weitermachen wollen</li>
+          <li>Sie den Anschluss an KI nicht verpassen wollen</li>
+          <li>Sie KI in Ihrem Unternehmen DSGVO-konform einsetzen möchten</li>
+          <li>Sie keine Lust auf tätowierte Hipster haben</li>
+          <li>Sie an einem einzigen Tag das lernen wollen, was Ihr Geschäft nach vorne bringt</li>
         </ul>
       </div>
       <div>
         <h3>Sie sind hier falsch, wenn</h3>
         <ul class="tick no">
-          <li>Sie einen Überblicksvortrag über KI suchen</li>
-          <li>Sie möchten, dass jemand das für Sie einrichtet und Sie es danach nicht anfassen</li>
-          <li>Sie erwarten, dass ein Agent selbstständig Nachrichten verschickt</li>
-          <li>Sie garantierte Umsatzzahlen erwarten. Die bekommen Sie hier nicht</li>
+          <li>Sie nur mal KI-Luft schnuppern wollen</li>
+          <li>Sie lieber unzählige Stunden bei YouTube verbringen</li>
+          <li>Sie glauben, dass KI für Ihr Geschäft keine Rolle spielt</li>
+          <li>Sie erwarten, dass am Ende jemand anderes den Agenten für Sie betreibt</li>
         </ul>
       </div>
+    </div>
+    <div class="col cta-mid">
+      <a class="btn" href="#angebot">Platz sichern</a>
+      <span class="hint">12 Plätze je Stadt</span>
     </div>
   </div>
 </section>
@@ -425,6 +474,10 @@ footer a{color:var(--band-ink)}
       <p class="small">Bedingung, offen genannt: Sie waren da und haben mitgebaut.</p>
       <p class="small">Warum so und nicht als Zufriedenheitsgarantie: „Wenn es Ihnen nicht gefällt" ist Geschmackssache. „Es läuft oder es läuft nicht" ist überprüfbar — und das prüfen wir noch im Raum, an jedem Platz.</p>
     </div>
+    <div class="col cta-mid">
+      <a class="btn" href="#angebot">Platz sichern</a>
+      <span class="hint">Ohne Risiko</span>
+    </div>
   </div>
 </section>
 
@@ -434,8 +487,7 @@ footer a{color:var(--band-ink)}
     <div class="col">
       <p class="eyebrow">Termine</p>
       <h2>Zwölf Plätze je Stadt. Mehr nehme ich nicht an.</h2>
-      <p class="lead">Zwölf ist keine Marketingzahl. Zwölf ist die Grenze, bis zu der ich an einem Tag noch an jeden einzelnen Platz komme.</p>
-      <p>Ab dreizehn sitzt jemand hinten und kommt nicht mit. Dann steht abends bei ihm nichts, und die Garantie oben wäre eine Behauptung. Deshalb ist bei zwölf Schluss, auch wenn noch jemand fragt.</p>
+      <p class="lead">In einer kleinen Gruppe garantiere ich, dass ich mir genug Zeit für Sie, Ihre Bedürfnisse und Ihre Agenten nehmen kann.</p>
     </div>
     <div class="cards">
       <div class="card">
@@ -455,7 +507,60 @@ footer a{color:var(--band-ink)}
       </div>
     </div>
 
-    <div class="cards" style="margin-top:20px">
+    <div class="col" style="margin-top:64px" id="angebot">
+      <p class="eyebrow">Was Sie zusätzlich bekommen</p>
+      <h2>Der Tag ist der Anfang. Das hier kommt dazu.</h2>
+      <p class="lead">Ein Agent, der abends läuft, ist wenig wert, wenn Sie vier Wochen später allein dastehen. Deshalb hört meine Arbeit am 17:00-Uhr-Schluss nicht auf.</p>
+    </div>
+
+    <div class="bonus">
+      <div class="b">
+        <span class="tag">Bonus 1</span>
+        <p class="t">Vier Wochen persönliche Begleitung
+          <small>Nach dem Workshop, direkt mit mir. Für die Stellen, an denen es zuhause hakt — und die gibt es.</small>
+        </p>
+        <span class="w">1.600 €</span>
+      </div>
+      <div class="b">
+        <span class="tag">Bonus 2</span>
+        <p class="t">Aufnahme in meine Community
+          <small>Der Ort, an dem die Teilnehmer aller drei Städte weiterarbeiten. Fragen, Vorlagen, was bei anderen funktioniert hat.</small>
+        </p>
+        <span class="w">480 €</span>
+      </div>
+      <div class="b">
+        <span class="tag">Bonus 3</span>
+        <p class="t">Zwei Monate LinkedIn Premium
+          <small>Damit Ihr Agent von Anfang an auf dem vollen Funktionsumfang arbeitet und nicht an der Suchgrenze.</small>
+        </p>
+        <span class="w">120 €</span>
+      </div>
+      <div class="b">
+        <span class="tag">Bonus 4</span>
+        <p class="t">Unbegrenzter Zugang zu allen Webinaren
+          <small>Zu den laufenden und zu allen künftigen. KI ändert sich schneller, als ein Workshop abdecken kann.</small>
+        </p>
+        <span class="w">900 €</span>
+      </div>
+      <div class="b">
+        <span class="tag">Bonus 5</span>
+        <p class="t">Ihre Agenten-Vorlagen als Datei
+          <small>Alles, was am Tag entsteht, kopierfertig zum Weitergeben im Team. Damit nicht nur Sie damit arbeiten, sondern Ihre Leute auch.</small>
+        </p>
+        <span class="w">600 €</span>
+      </div>
+      <div class="b sum">
+        <p class="t">Wert der Boni zusammen</p>
+        <span class="w">3.700 €</span>
+      </div>
+    </div>
+
+    <div class="col cta-mid" style="border-top-color:var(--band-line)">
+      <button class="btn" type="button" id="preis-btn" aria-expanded="false" aria-controls="preis-panel">Platz sichern</button>
+      <span class="hint">Preis und Anmeldung</span>
+    </div>
+
+    <div class="col reveal-panel" id="preis-panel" hidden>
       <div class="pricebox">
         <span class="amount">2.356 €</span>
         <span class="per">je Person · netto, zzgl. USt.</span>
@@ -463,13 +568,11 @@ footer a{color:var(--band-ink)}
           <li>Ein voller Tag in einer Gruppe von höchstens zwölf</li>
           <li>Frühstück, Mittagessen, Kaffee</li>
           <li>Alle Vorlagen und Anleitungen zum Nachbauen</li>
-          <li>Ihre Unterlagen und der nächste Schritt, zwei Werktage später per Mail</li>
+          <li>Die fünf Boni oben, im Wert von 3.700 €</li>
           <li>Nachfrage nach vier Wochen: Was läuft noch?</li>
         </ul>
-      </div>
-      <div style="display:grid; align-content:center; gap:18px">
-        <p class="lead" style="margin:0">Technik-Check per Mail drei Tage vorher, mit Bestätigung zurück. Damit am Morgen keine 45 Minuten für Zugänge draufgehen.</p>
-        <div><a class="btn" href="#anmeldung">Platz sichern</a></div>
+        <p style="margin:22px 0 0"><a class="btn" href="mailto:mail@sometra.de?subject=Workshop%20Vertriebsagenten%20—%20Platz%20sichern">Platz verbindlich sichern</a></p>
+        <p class="small" style="color:var(--band-ink-2); margin:16px 0 0">Schreiben Sie mir Ihre Stadt. Sie bekommen die Rechnung, den Raum und den Technik-Check drei Tage vorher.</p>
       </div>
     </div>
   </div>
@@ -483,11 +586,15 @@ footer a{color:var(--band-ink)}
       <h2>Vier Dinge. Sonst nichts.</h2>
       <ul class="tick" style="margin-top:26px">
         <li><strong>Einen eigenen Laptop.</strong> Keinen Firmenrechner, auf dem nichts installiert werden darf</li>
-        <li><strong>Ein bezahltes Konto bei Claude oder ChatGPT</strong>, vor dem Workshop eingerichtet</li>
-        <li><strong>Ihr LinkedIn-Konto</strong>, eingeloggt</li>
-        <li><strong>Airtable oder Excel.</strong> Beide Wege werden gezeigt, Sie entscheiden am Tag</li>
+        <li><strong>Ihre Idee für Ihren Agenten.</strong> Muss nicht ausgereift sein. Ein Satz reicht</li>
+        <li><strong>Zugang zu Ihrem Google-Konto.</strong> Wenn Sie keines haben, richten wir vor dem Workshop gemeinsam eines ein</li>
+        <li><strong>Neugierde und gute Laune.</strong> Der Rest kommt von mir</li>
       </ul>
       <p class="small" style="margin-top:24px">Eine Programmiersprache brauchen Sie nicht. Sie schreiben Auftrag, Prüflogik und Abbruchregeln Ihres Agenten selbst — in Ihrer Sprache. Das Ergebnis ist trotzdem ein Programm, und es läuft ohne Sie weiter.</p>
+      <div class="cta-mid">
+        <a class="btn" href="#angebot">Platz sichern</a>
+        <span class="hint">Technik-Check inklusive</span>
+      </div>
     </div>
   </div>
 </section>
@@ -532,6 +639,10 @@ footer a{color:var(--band-ink)}
           <p>Zwei Werktage später bekommen Sie Ihre Unterlagen, die Anleitungen zum Erweitern und einen konkreten nächsten Schritt. Nach vier Wochen frage ich nach, was noch läuft und was eingeschlafen ist. Wer danach Begleitung möchte, bekommt ein Angebot — muss aber nicht.</p>
         </details>
       </div>
+      <div class="cta-mid">
+        <a class="btn" href="#angebot">Platz sichern</a>
+        <span class="hint">Hamburg · München · Köln</span>
+      </div>
     </div>
   </div>
 </section>
@@ -547,6 +658,10 @@ footer a{color:var(--band-ink)}
         <p class="lead">Ich führe KI in Vertrieb und Marketing im DACH-Mittelstand ein — und zwar so, dass sie nach meinem Abgang noch benutzt wird.</p>
         <p>Die Agenten, die Sie an diesem Tag bauen, laufen bei mir selbst. Ich zeige Ihnen keinen Prototyp, sondern das, womit ich arbeite, samt der Stellen, an denen es hakt.</p>
         <p>Reale Nutzung vor Tool-Begeisterung. Kein Clickbait, kein Versprechen, das nicht gedeckt ist.</p>
+        <div class="cta-mid">
+          <a class="btn" href="#angebot">Platz sichern</a>
+          <span class="hint">12 Plätze je Stadt</span>
+        </div>
       </div>
     </div>
   </div>
@@ -560,8 +675,8 @@ footer a{color:var(--band-ink)}
       <h2>Zwölf Plätze je Stadt. Danach ist der Termin zu.</h2>
       <p class="lead">Schreiben Sie mir, in welcher Stadt Sie dabei sein wollen. Sie bekommen die Rechnung, den Raum und den Technik-Check.</p>
       <div class="cta-row" style="padding-bottom:0">
-        <a class="btn" href="mailto:mail@sometra.de?subject=Workshop%20Vertriebsagenten%20—%20Platz%20sichern">Platz sichern</a>
-        <span class="price-inline" style="color:var(--ink-3)">2.356 € netto je Person · Geld zurück, wenn nichts läuft</span>
+        <a class="btn" href="#angebot">Platz sichern</a>
+        <span class="price-inline" style="color:var(--ink-3)">Geld zurück, wenn nichts läuft</span>
       </div>
     </div>
   </div>
@@ -576,6 +691,24 @@ footer a{color:var(--band-ink)}
 </footer>
 
 <script>
+(function(){
+  var btn = document.getElementById('preis-btn');
+  var panel = document.getElementById('preis-panel');
+  if(btn && panel){
+    btn.addEventListener('click', function(){
+      panel.hidden = false;
+      btn.setAttribute('aria-expanded','true');
+      btn.parentNode.style.display = 'none';
+      panel.scrollIntoView({behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'center'});
+    });
+  }
+  // Sprungmarken auf #angebot oeffnen das Preisfeld gleich mit
+  document.querySelectorAll('a[href="#angebot"]').forEach(function(a){
+    a.addEventListener('click', function(){
+      if(btn && panel && panel.hidden){ setTimeout(function(){ btn.focus(); }, 400); }
+    });
+  });
+})();
 (function(){
   var els = document.querySelectorAll('.reveal');
   if(!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
