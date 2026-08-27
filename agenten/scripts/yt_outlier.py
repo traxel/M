@@ -105,6 +105,21 @@ def videos(uploads: str, want: int) -> list[dict]:
     return out
 
 
+def nachbar_median(views: list[int], i: int, k: int) -> float:
+    """Median der k zeitlich naechsten Videos, ohne das Video selbst.
+
+    Views sammeln sich ueber Zeit an. Ein Video gegen den Median ALLER Videos
+    zu halten, bevorzugt deshalb systematisch die alten. Verglichen wird
+    stattdessen mit den unmittelbaren Nachbarn in der Veroeffentlichungsfolge —
+    die hatten ungefaehr gleich viel Zeit.
+    """
+    lo = max(0, i - k // 2)
+    hi = min(len(views), lo + k + 1)
+    lo = max(0, hi - k - 1)
+    nachbarn = [v for j, v in enumerate(views[lo:hi], start=lo) if j != i]
+    return statistics.median(nachbarn) if nachbarn else 1.0
+
+
 def de(n: float) -> str:
     """Tausenderpunkte, deutsche Schreibweise."""
     return f"{int(n):,}".replace(",", ".")
@@ -125,9 +140,11 @@ def main() -> None:
     ap.add_argument("--sample", type=int, default=30, help="Videos fuer den Median")
     ap.add_argument("--min", type=float, default=2.0, help="Ratio ab der ausgegeben wird")
     ap.add_argument("--min-age", type=int, default=14,
-                    help="Untergrenze des Vergleichsfensters in Tagen")
-    ap.add_argument("--max-age", type=int, default=180,
-                    help="Obergrenze des Vergleichsfensters in Tagen")
+                    help="Videos juenger als das zaehlen nicht — noch nicht eingelaufen")
+    ap.add_argument("--max-age", type=int, default=365,
+                    help="Obergrenze, grober Schnitt")
+    ap.add_argument("--nachbarn", type=int, default=8,
+                    help="Gegen wie viele zeitlich benachbarte Videos verglichen wird")
     ap.add_argument("--format", choices=["long", "short", "alle"], default="long",
                     help="long = nur lange Videos (Standard), short = nur Shorts, "
                          "alle = beides gemeinsam. 'alle' verzerrt den Median, "
@@ -175,18 +192,19 @@ def main() -> None:
                   f"Fenster mit --max-age weiten oder --sample erhoehen.")
             continue
 
+        clean.sort(key=lambda v: v["_age"])
         views = [int(v["statistics"].get("viewCount", 0)) for v in clean]
-        med = statistics.median(views) or 1
 
         label = {"long": "lange Videos", "short": "Shorts",
                  "alle": "Videos"}[a.format]
         print(f"\n{title}  —  {de(subs)} Abonnenten"
-              f"  ·  Median {de(med)} Views"
-              f"  ·  {len(clean)} {label} im Fenster {a.min_age}-{a.max_age} Tage"
-              f"  ({format_raus} {anderes} und {ausserhalb} ausserhalb aussortiert)")
+              f"  ·  {len(clean)} {label}, {clean[0]['_age']}-{clean[-1]['_age']} Tage alt"
+              f"  ({format_raus} {anderes} und {ausserhalb} aussortiert)"
+              f"  ·  Vergleich gegen je {a.nachbarn} Nachbarn")
 
-        for v in clean:
-            vw = int(v["statistics"].get("viewCount", 0))
+        for i, v in enumerate(clean):
+            med = nachbar_median(views, i, a.nachbarn)
+            vw = views[i]
             ratio = vw / med
             if ratio >= a.min:
                 rows.append((ratio, title, v["snippet"]["title"], vw, v["_age"],
