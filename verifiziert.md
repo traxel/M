@@ -172,7 +172,7 @@ dann dazu, statt es als gesichert zu verkaufen.
 
 | Annahme | Warum ungeprüft |
 |---|---|
-| Landingpage-System | Weiß nicht, worauf sometra.de läuft. In Drive liegt `wp_article_04.html`, das deutet auf WordPress — geraten, nicht geprüft |
+| Landingpage-System | **Mariana am 27.08.: wird in sometra.de integriert.** Womit sometra.de läuft, bleibt offen — die Domain ist aus dem Container blockiert (403 vom Proxy, per Abruf und per curl geprüft) |
 | Zahlungsweg für den Workshop | **Geprüft am 27.08.: kein Zahlungs-Connector in dieser Umgebung.** Optionen und Empfehlung in `angebot/zahlungsweg.md` — dort alles zu Gebühren und Fristen ausdrücklich nur Websuche |
 | Screen-Recording-Werkzeug | Unbekannt, womit du aufnimmst |
 | LinkedIn-Content-Scanner | Beruht auf deiner Aussage, dass die Agenten Profile erreichen. Die Agenten-Prompts selbst habe ich nie gesehen — sie liegen lokal, nicht in Drive |

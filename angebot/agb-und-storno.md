@@ -115,15 +115,20 @@ ausschließlich mit Unternehmern geschlossen wird.
 
 ### § 5 Absage oder Verlegung durch Sometra
 
-(1) Sometra kann den Workshop absagen, wenn bis 14 Tage vor dem Termin
-**weniger als [Mindestteilnehmerzahl eintragen] Anmeldungen** vorliegen,
-oder wenn die Durchführung aus Gründen unmöglich wird, die Sometra nicht zu
-vertreten hat (Krankheit, höhere Gewalt, Ausfall der Räumlichkeiten).
+(1) Sometra kann den Workshop bis 14 Tage vor dem Termin absagen oder auf
+einen Ersatztermin verlegen, insbesondere wenn
 
-(2) In diesem Fall wird der gezahlte Teilnahmepreis vollständig erstattet.
+a) **weniger als sechs Anmeldungen** für den Termin vorliegen, oder
+b) die Durchführung aus Gründen unmöglich wird, die Sometra nicht zu
+   vertreten hat, etwa Krankheit, höhere Gewalt oder Ausfall der
+   Räumlichkeiten.
+
+(2) **Sometra ist nicht verpflichtet, in der Absage den Grund zu nennen.**
+
+(3) Der gezahlte Teilnahmepreis wird in diesem Fall vollständig erstattet.
 Wahlweise kann der Teilnehmer auf einen Ersatztermin umbuchen.
 
-(3) Weitergehende Ansprüche, insbesondere auf Ersatz von Reise- oder
+(4) Weitergehende Ansprüche, insbesondere auf Ersatz von Reise- oder
 Übernachtungskosten, bestehen nicht. Reise und Unterkunft organisiert und
 trägt der Teilnehmer selbst.
 
@@ -215,10 +220,57 @@ wirksam.
 
 | Punkt | Warum |
 |---|---|
-| **Mindestteilnehmerzahl** für § 5 | Ab wie vielen Anmeldungen lohnt der Tag? Bei Raum und Catering und einer Anreise wären fünf ein realistischer Wert. Ohne Zahl in den AGB kann nicht abgesagt werden, ohne zu haften |
+| ~~Mindestteilnehmerzahl~~ | **erledigt: sechs.** Bei fünf oder weniger wird abgesagt |
 | **Gerichtsstand** | Sitz von Sometra |
 | **Sind 48 Stunden ab Rechnung gemeint oder ab Buchung?** | Der Entwurf sagt: ab Rechnung. Das ist die einzige Fassung, die mit der 7-Tage-Zahlungsfrist zusammenpasst |
 | **Ersatzteilnehmer-Klausel behalten?** | Empfehlung: ja. Sie kostet nichts und nimmt fast jeder Absage die Schärfe |
+
+---
+
+## Absagen, ohne die Teilnehmerzahl preiszugeben
+
+Marianas Anliegen: Wenn zu wenige buchen, sollen die Angemeldeten nicht
+erfahren, dass es an der Teilnehmerzahl lag.
+
+**Das geht — ohne einen falschen Grund zu nennen.** § 5 Absatz 2 stellt
+klar, dass Sometra den Grund nicht angeben muss. Die Absage nennt dann
+schlicht keinen. Damit erfährt niemand etwas über die Buchungslage, und es
+steht keine Behauptung im Raum, die später jemand nachprüfen kann.
+
+**Warum der Umweg über eine vorgeschobene Krankheit die schlechtere Lösung
+ist**, ganz unabhängig davon, wie man es moralisch sieht:
+
+- **Ohne die Klausel in Absatz 1a gibt es kein Absagerecht wegen zu geringer
+  Teilnehmerzahl.** Wer dann absagt und Krankheit vorschiebt, sagt ohne
+  vertragliche Grundlage ab. Der Haftungsausschluss für Reise- und
+  Hotelkosten in Absatz 4 greift nur für Absagen nach Absatz 1. Ein
+  Teilnehmer mit gebuchtem Hotelzimmer könnte die Kosten verlangen
+- **Der Markt ist klein.** Zwölf Plätze, drei Städte, dieselbe Branche. Ein
+  Absagegrund, den zwei Teilnehmer nebeneinanderlegen können, hält nicht
+- **Es ist unnötig.** „Der Termin findet nicht statt, Sie bekommen den
+  vollen Betrag zurück, hier sind die Ersatztermine" verrät nichts und
+  behauptet nichts
+
+### Vorlage für die Absage-Mail
+
+> Betreff: Workshop am [Datum] in [Stadt] — Termin entfällt
+>
+> Guten Tag [Name],
+>
+> der Workshop am [Datum] in [Stadt] findet nicht statt. Den vollen Betrag
+> von [Betrag] € überweise ich Ihnen bis [Datum] zurück, ohne dass Sie
+> etwas tun müssen.
+>
+> Wenn Sie möchten, buche ich Sie auf einen der anderen Termine um:
+> [Stadt, Datum] oder [Stadt, Datum]. Ihr Platz ist dort reserviert, ein
+> Wort von Ihnen genügt.
+>
+> Es tut mir leid für Ihre Planung.
+>
+> Mariana Theux
+
+Kein Grund, keine Ausrede, keine Angriffsfläche. Und ein Umbuchungsangebot,
+das den Teilnehmer möglicherweise rettet, statt ihn zu verlieren.
 
 ---
 
