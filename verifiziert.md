@@ -177,6 +177,63 @@ dann dazu, statt es als gesichert zu verkaufen.
 | Screen-Recording-Werkzeug | Unbekannt, womit du aufnimmst |
 | LinkedIn-Content-Scanner | Beruht auf deiner Aussage, dass die Agenten Profile erreichen. Die Agenten-Prompts selbst habe ich nie gesehen — sie liegen lokal, nicht in Drive |
 | Kalender-/Buchungswerkzeug | Google Calendar ist verbunden — ob du damit buchen lassen willst, ist offen |
-| Kling, HeyGen, Apify | Keine Verbindung vorhanden. Prüfung dort nur über Websuche möglich, das sage ich künftig dazu |
+| HeyGen | Keine Spur im Werkzeugbestand — siehe Umgebungskarte unten |
+| Apify | Keine Verbindung. Prüfung nur über Websuche |
 
 Diese fünf klären wir, bevor ich etwas darauf aufbaue.
+
+---
+
+## Umgebungskarte — was läuft wo
+
+Nachgeprüft am 27.08. Drei Anläufe haben dasselbe Muster ergeben, deshalb
+steht es jetzt als Karte da statt als Einzelfall.
+
+**Dein Mac hat den vollen Werkzeugkasten. Diese Cloud-Session hat eine
+Teilmenge.** Wenn ich sage „geht nicht", muss ich sagen, welches der beiden
+ich meine.
+
+| Werkzeug | Hier | Lokal | Beleg |
+|---|---|---|---|
+| Airtable | ✓ `create` auf 3 Bases | ✓ | Connector, live aufgerufen |
+| Google Drive | ✓ lesen und schreiben | ✓ | Connector, live aufgerufen |
+| Descript | ✓ Import, Transkript, Schnitt, Publish | ✓ | Connector, Schema gelesen |
+| Canva, Gmail, Calendar, HubSpot, M365, Zoom, Granola | ✓ | ✓ | `ListConnectors` |
+| YouTube Data API | ✓ **sobald ein Key da ist** | ✓ | `googleapis.com` antwortet |
+| **Kling** | ✗ | **✓** | in `media-gen` über Fal: `fal-ai/kling-video/v3/pro/image-to-video` und `v3/4k`. Braucht `FAL_KEY` — hier nicht gesetzt, `fal.run` nicht erreichbar |
+| Alle anderen Fal-Modelle | ✗ | ✓ | dieselbe Ursache |
+| **HyperFrames** | ✗ | ✓ | Skill, Connector und Dateien hier nicht vorhanden |
+| **Thumbnail-Render** | ✗ | ✓ | `Thumbnail rendern.command`, headless Chrome, lokal |
+| **HeyGen** | ✗ | **unklar** | siehe unten |
+
+### Kling — korrigiert
+
+Ich hatte geschrieben, für Kling gäbe es „keine Verbindung". Falsch.
+Kling ist über die `media-gen`-Skill und Fal.ai eingebunden, mit zwei Modellen
+für Bild-zu-Video. Nur ausführen kann ich es von hier nicht: `FAL_KEY` ist im
+Container nicht gesetzt, und `fal.run` ist nicht erreichbar.
+
+Für die Videoarbeit heißt das: **Kling-Prompts schreibe ich hier, ausgeführt
+wird lokal.** Genau die Rollenteilung, die `visual-regie` ohnehin vorsieht —
+sie liefert den Prompt, das Tool baut.
+
+### HeyGen — ich finde keine Spur
+
+Geprüft: keine Erwähnung in `media-gen` (weder `models.json` noch `SKILL.md`
+noch `README.md`), kein Connector, `api.heygen.com` nicht erreichbar.
+
+Der einzige Hinweis ist der Drive-Ordner `videos/fal-heygen-test`
+(`1gwOE3qIcXted4j4bLAwM7sGFihdMsfVN`) — der Name deutet auf einen Test über Fal.
+
+**Frage an dich, statt einer Vermutung:** Lief HeyGen über einen Fal-Endpunkt,
+über einen eigenen HeyGen-Account mit API-Key, oder über die HeyGen-Oberfläche
+von Hand? Danach richtet sich, ob ich überhaupt etwas dazu vorschlagen kann.
+
+### Die Regel, die daraus folgt
+
+Bevor ich ein Werkzeug ausschließe, prüfe ich beide Ebenen:
+1. Ist es im Werkzeugbestand vorhanden — Connector, Skill, Modellliste?
+2. Ist es **von hier** ausführbar — Key gesetzt, Host erreichbar?
+
+Zwei getrennte Fragen. Ich hatte sie zusammengeworfen und deshalb dreimal
+„geht nicht" gesagt, wo „nicht von hier" richtig gewesen wäre.
