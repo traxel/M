@@ -48,6 +48,10 @@ Persistente Notizen für die Zusammenarbeit mit Mariana (Sometra).
   ist es ungeklärt. Token und Geld laufen gegenläufig: Schreiben kostet
   Token, lokal rendern kostet nichts, Cloud kostet Geld statt Token.
   Also: **so oft lokal iterieren wie nötig.**
+- **Drei Werkzeug-Ebenen unterscheiden:** claude.ai-Connectoren (erreichen
+  Remote-Sessions), Desktop-Erweiterungen `.mcpb`/`.dxt` (nur Mac,
+  Desktop-App — dort liegen Apify, Control Chrome, Filesystem), lokale
+  Skills/CLI (teils per `npx` nachinstallierbar).
 - **Connectoren haben zwei Schalter:** `connected` (Konto-Ebene) und
   `enabledInChat` (dieser Chat). Beides muss an sein, sonst fehlen die
   Werkzeuge trotz erfolgreicher Verbindung. Mit `ListConnectors` prüfen,

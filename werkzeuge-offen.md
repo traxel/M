@@ -132,3 +132,48 @@ regelkonform. Apify wäre nur für LinkedIn interessant — und dort erst, wenn
 die Menge dein Konto gefährdet.
 
 Kein Grund zur Eile also. Der YouTube-Key bringt uns weiter, Apify nicht.
+
+
+---
+
+## Nachtrag 2 — Apify ist installiert, aber als Desktop-Erweiterung
+
+Der Screenshot löst den Widerspruch auf. Die Überschrift lautet
+**„Auf deinem Computer installiert"**. Apify steht dort neben
+Control Chrome, Filesystem, PowerPoint und Word.
+
+Das sind **Desktop-Erweiterungen** (`.mcpb` / `.dxt`), installiert in der
+Claude-Desktop-App auf deinem Mac. Sie laufen dort — nicht in einer
+Remote-Session in der Cloud.
+
+Erkennbar auch daran, was sonst in der Liste steht: „Control Chrome" und
+„Filesystem" steuern *deinen* Browser und *dein* Dateisystem. Von einem
+Cloud-Container aus ergibt das gar keinen Sinn.
+
+**Drei Ebenen, nicht zwei:**
+
+| Ebene | Wo installiert | Erreicht Remote-Sessions |
+|---|---|---|
+| claude.ai-Connectoren | Konto | **ja** — Airtable, Drive, Descript, Canva … |
+| Desktop-Erweiterungen (`.mcpb`/`.dxt`) | Mac, Desktop-App | **nein** — Apify, Control Chrome, Filesystem |
+| Lokale Skills und CLI | Mac bzw. per `npx` nachinstallierbar | teils — HyperFrames ließ sich hier nachinstallieren |
+
+### Wenn Apify auch in Remote-Sessions verfügbar sein soll
+
+Dann nicht als Desktop-Erweiterung, sondern als **Connector auf claude.ai**
+mit der Server-Adresse `https://mcp.apify.com`, Anmeldung per OAuth beim
+ersten Aufruf.
+
+**Quelle: nur Websuche** (Apify-Doku, `docs.apify.com`). Von hier aus konnte
+ich das nicht am Dienst selbst prüfen — die Adresse ist über den
+Container-Egress nicht erreichbar, was für einen Connector aber nichts
+bedeutet.
+
+### Ob sich das lohnt
+
+Für den aktuellen Plan nicht. Apify wird nur für LinkedIn gebraucht, und
+dort erst, wenn die Menge dein Konto gefährdet. Für YouTube ist die
+offizielle API besser.
+
+**Praktischer:** Wenn Apify-Arbeit ansteht, in einer lokalen Session
+arbeiten. Dort ist es bereits eingerichtet.
