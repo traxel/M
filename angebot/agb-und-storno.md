@@ -56,8 +56,10 @@ Stand: [Datum eintragen]
 
 ### § 1 Geltungsbereich und Vertragspartner
 
-(1) Diese Bedingungen gelten für alle Buchungen des von Sometra
-veranstalteten Präsenz-Workshops.
+(1) Diese Bedingungen gelten für alle Buchungen des Präsenz-Workshops,
+veranstaltet von [**vollständige Firmierung der zypriotischen Gesellschaft,
+Registernummer, eingetragener Sitz, USt-IdNr. eintragen**], nachfolgend
+„Sometra".
 
 (2) **Das Angebot richtet sich ausschließlich an Unternehmer im Sinne des
 § 14 BGB, an juristische Personen des öffentlichen Rechts und an
@@ -112,6 +114,13 @@ spätestens 24 Stunden vor Veranstaltungsbeginn.
 
 (4) Ein gesetzliches Widerrufsrecht besteht nicht, da der Vertrag
 ausschließlich mit Unternehmern geschlossen wird.
+
+(5) Sometra kann dem Teilnehmer bei einer Absage nach Ablauf der Frist aus
+Absatz 1 **nach eigenem Ermessen** einen Gutschein über den gezahlten Betrag
+anbieten. Der Gutschein ist zwölf Monate ab Ausstellung gültig, auf jeden
+von Sometra angebotenen Workshop anrechenbar und innerhalb des Unternehmens
+des Teilnehmers übertragbar. **Ein Anspruch auf einen Gutschein besteht
+nicht.**
 
 ### § 5 Absage oder Verlegung durch Sometra
 
@@ -203,11 +212,13 @@ vorheriger Einwilligung der Abgebildeten angefertigt und verwendet.
 
 ### § 11 Schlussbestimmungen
 
-(1) Es gilt deutsches Recht.
+(1) Es gilt [**Rechtswahl eintragen — siehe Hinweis unten**].
 
-(2) Ausschließlicher Gerichtsstand ist [Sitz von Sometra eintragen],
-soweit der Teilnehmer Kaufmann, juristische Person des öffentlichen Rechts
-oder öffentlich-rechtliches Sondervermögen ist.
+(2) Ausschließlicher Gerichtsstand für alle Streitigkeiten aus diesem
+Vertrag ist **Zypern, [Stadt eintragen]**, soweit der Teilnehmer Unternehmer,
+juristische Person des öffentlichen Rechts oder öffentlich-rechtliches
+Sondervermögen ist. Die Gerichtsstandsvereinbarung wird nach Art. 25 der
+Verordnung (EU) Nr. 1215/2012 getroffen.
 
 (3) Änderungen und Ergänzungen bedürfen der Textform.
 
@@ -221,9 +232,103 @@ wirksam.
 | Punkt | Warum |
 |---|---|
 | ~~Mindestteilnehmerzahl~~ | **erledigt: sechs.** Bei fünf oder weniger wird abgesagt |
-| **Gerichtsstand** | Sitz von Sometra |
+| ~~Gerichtsstand~~ | **erledigt: Zypern.** Stadt noch eintragen. Folgen siehe oben |
+| **Rechtswahl: deutsches oder zypriotisches Recht?** | Blockiert die Prüfung. Der Entwurf ist auf deutschem Recht gebaut |
+| **Vollständige Firmierung, Registernummer, Sitz, USt-IdNr.** | Gehört in § 1 und ins Impressum |
+| **Umsatzsteuer: Eintrittsberechtigung oder Grundregel?** | Entscheidet über deutsche Registrierung und über den Preistext auf der Seite |
 | **Sind 48 Stunden ab Rechnung gemeint oder ab Buchung?** | Der Entwurf sagt: ab Rechnung. Das ist die einzige Fassung, die mit der 7-Tage-Zahlungsfrist zusammenpasst |
 | **Ersatzteilnehmer-Klausel behalten?** | Empfehlung: ja. Sie kostet nichts und nimmt fast jeder Absage die Schärfe |
+
+---
+
+## Sometra ist zypriotisch — was daran hängt
+
+Stand 27.08. Diese Information kam nach dem ersten Entwurf und ändert drei
+Dinge.
+
+### 1. Gerichtsstand Zypern ist zulässig — und kostet Sie zweimal
+
+Zwischen Unternehmern ist eine Gerichtsstandsvereinbarung nach Art. 25
+Brüssel-Ia-Verordnung wirksam, auch in AGB. Rechtlich geht das. **Umgesetzt
+ist es in § 11.**
+
+Zwei Kosten, die Sie kennen sollten:
+
+- **Beim Verkaufen.** Ein Geschäftsführer, der 2.803 € an eine ihm unbekannte
+  ausländische Gesellschaft überweisen soll und in den AGB „Gerichtsstand
+  Zypern" liest, wird vorsichtiger, nicht mutiger. Das ist der Absatz, den
+  eine Rechtsabteilung als Erstes anstreicht
+- **Beim Eintreiben.** Wenn ein Teilnehmer nicht zahlt, müssen **Sie** in
+  Zypern klagen und das Urteil danach in Deutschland vollstrecken. Für eine
+  Forderung von 2.356 € lohnt das nie. Mit deutschem Gerichtsstand stünde
+  Ihnen das Europäische Mahnverfahren offen, und das ist billig und schnell
+
+Ein Mittelweg, der beides löst und den ausländische Anbieter im
+Deutschlandgeschäft regelmäßig wählen: **deutsches Recht und deutscher
+Gerichtsstand für das Deutschlandgeschäft**, unabhängig davon, wo die
+Gesellschaft sitzt. Ihre Entscheidung — im Entwurf steht Zypern, wie
+gewünscht.
+
+### 2. Die Rechtswahl ist jetzt offen
+
+Der gesamte Entwurf ist auf deutschem Recht gebaut: § 9 folgt der deutschen
+Haftungssystematik, § 4 der deutschen AGB-Kontrolle nach § 307 BGB.
+
+- **Deutsches Recht gewählt** → der Entwurf trägt, ein deutscher Anwalt
+  prüft ihn
+- **Zypriotisches Recht gewählt** → der Entwurf ist falsch verankert und
+  gehört zu einem zypriotischen Anwalt. Ich kann ihn dafür nicht anpassen
+
+Solange das offen ist, ist § 11 Absatz 1 eine Lücke, keine Klausel.
+
+### 3. Die Umsatzsteuer ist nicht mehr der einfache Fall
+
+Steht ausführlich in `angebot/zahlungsweg.md`. Kurz: Ob deutsche
+Umsatzsteuer mit deutscher Registrierung oder Reverse-Charge, hängt daran,
+ob der Workshop als Eintrittsberechtigung zu einer Veranstaltung oder als
+sonstige Leistung nach der B2B-Grundregel gilt. **Vor dem ersten verkauften
+Platz mit dem Steuerberater klären.** Davon hängt auch ab, was auf der
+Landingpage beim Preis steht.
+
+---
+
+## Rückerstattung oder Gutschein
+
+Marianas Frage: keine Stornierung anbieten, stattdessen einen Gutschein für
+das nächste Seminar. Machen viele so.
+
+**Empfehlung: beides, aber getrennt.**
+
+### Die 48 Stunden mit Rückerstattung behalten
+
+Ein Fremder soll 2.803 € an eine ausländische Gesellschaft überweisen, für
+einen Workshop in neun Wochen, den es noch nie gab. Die 48-Stunden-Regel ist
+neben der Ergebnisgarantie das stärkste Vertrauenselement, das die Seite
+hat.
+
+Und sie kostet fast nichts: Wer nach 48 Stunden storniert, hat sich meist
+schon beim Buchen geirrt. Diese Rückerstattungen sind selten. Sie gegen ein
+paar gesparte Fälle einzutauschen, ist ein schlechter Tausch — Sie zahlen
+mit Buchungen, die gar nicht erst zustande kommen.
+
+### Den Gutschein als Ihr Recht formulieren, nicht als seines
+
+So steht es jetzt in § 4 Absatz 5: Sometra **kann** einen Gutschein
+anbieten, ein Anspruch besteht nicht.
+
+Der Unterschied ist entscheidend. Als Anspruch des Teilnehmers wird der
+Gutschein zur regulären Ausstiegstür, und die feste Buchung ist wieder weg.
+Als Ihr Ermessen ist er das Werkzeug, mit dem Sie den einen Fall lösen, bei
+dem jemand wirklich nicht kann — ohne dass alle anderen davon lernen.
+
+### Drei Bedingungen, damit ein Gutschein kein Problem wird
+
+- **Zwölf Monate Gültigkeit.** Ein Gutschein für „das nächste Seminar" ist
+  wertlos, solange für 2027 kein Termin steht
+- **Übertragbar im Unternehmen.** Sonst verfällt er, wenn die Person wechselt
+- **Nicht bei der Ergebnisgarantie.** Wenn § 6 greift, fließt Geld zurück,
+  kein Gutschein. Sonst ist die Garantie auf der Landingpage keine
+  Geld-zurück-Garantie mehr, und genau das steht dort
 
 ---
 

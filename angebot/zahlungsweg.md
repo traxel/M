@@ -103,7 +103,71 @@ Plätzen ist das mehr Apparat als Nutzen.
 
 ---
 
-## Entschieden für die erste Runde: gar kein Anbieter
+## Wenn sofort bezahlt werden soll: Stripe
+
+Stand 27.08.: Mariana will, dass bei der Buchung sofort bezahlt wird — nicht
+Rechnung mit sieben Tagen Frist. Damit fällt der Weg ohne Anbieter weg, und
+die Frage ist nur noch, welcher.
+
+**Antwort: Stripe.** Begründung sind die Gebühren und der Umstand, dass die
+Rechnung im eigenen Namen bleibt.
+
+### Was ein Platz an Gebühren kostet
+
+Brutto je Platz: 2.356 € × 1,19 = **2.803,64 €**
+
+| Weg | je Platz | 36 Plätze |
+|---|---|---|
+| **SEPA-Lastschrift über Stripe** | **0,35 €** | **13 €** |
+| Stripe, EU-Karte (1,4 % + 0,25 €) | 39,50 € | 1.422 € |
+| Mollie, EU-Karte (1,8 % + 0,25 €) | 50,72 € | 1.826 € |
+| PayPal direkt (rund 2,99 % + 0,39 €) | 84,22 € | 3.032 € |
+| Digistore24, Standard | 150,38 € | 5.414 € |
+
+**Alle Sätze: Websuche, nicht am Dienst geprüft.** Vor der Einrichtung beim
+Anbieter nachsehen.
+
+Der Unterschied zwischen erster und letzter Zeile ist der Punkt: **SEPA-
+Lastschrift kostet 0,35 € pauschal, unabhängig vom Betrag.** Bei einem
+Ticket von 2.803,64 € ist jede prozentuale Gebühr teuer und jede
+Pauschalgebühr geschenkt.
+
+### Warum Stripe und nicht Mollie
+
+- Günstiger bei Karte, gleich bei Lastschrift
+- Rechnungsstellung im eigenen Namen ist eingebaut, kein Wiederverkäufer
+- Zahlungslink ohne Website-Integration möglich — wichtig, solange die
+  Landingpage noch nicht in sometra.de steckt
+
+Mollie ist die brauchbare Alternative, falls Stripe für eine zypriotische
+Gesellschaft Probleme macht. Beide ohne Monatsgebühr.
+
+### Der Haken, den Mariana kennen muss
+
+**Die Käufer haben überwiegend keine Firmenkreditkarte** — Marianas eigene
+Einschätzung. Damit bleiben in der Praxis:
+
+| Methode | Geht das im Firmenkontext? |
+|---|---|
+| **SEPA-Lastschrift** | Ja, ein Unternehmen kann ein Mandat erteilen. Günstigster Weg |
+| **PayPal** | Viele Firmen haben ein Konto. Teuer, aber es geht sofort |
+| **Karte** | Laut Marianas Einschätzung selten vorhanden |
+| Sofortüberweisung / Onlinebanking | In Firmen oft nicht, weil Freigaben zu zweit laufen |
+
+**Rückbuchungsrisiko bei SEPA-Lastschrift:** Bei der normalen
+Basis-Lastschrift kann acht Wochen lang ohne Angabe von Gründen
+zurückgebucht werden. Der Workshop liegt bei einer Buchung heute rund sechs
+Wochen entfernt — jemand könnte also teilnehmen und danach zurückbuchen.
+Zwei Wege dagegen: das **B2B-Firmenlastschriftmandat** (keine Rückgabe, aber
+die Bank des Kunden muss es bestätigen), oder für späte Buchungen nur Karte
+und PayPal anbieten. **Ungeprüft, ob Stripe das B2B-Mandat anbietet.**
+
+Marianas Haltung dazu ist notiert: Wer nicht zahlen kann, klärt das mit
+seiner Buchhaltung. Das ist eine Entscheidung, keine Lücke.
+
+---
+
+## Der Weg ohne Anbieter — überholt, aber dokumentiert
 
 Stand 27.08.: Mariana hat online noch nie etwas verkauft. Digistore war
 einmal im Einsatz und war zu teuer — was sich mit der Rechnung oben deckt:
@@ -168,19 +232,45 @@ Rechnung, und die Vorgabe „Zahlung bei Buchung" bleibt bestehen.
 
 ---
 
-## Umsatzsteuer — die gute Nachricht
+## Umsatzsteuer — korrigiert am 27.08.
 
-Der Workshop ist eine **Präsenzveranstaltung in Deutschland**. Für die
-Eintrittsberechtigung zu einer Veranstaltung ist der Leistungsort der
-Veranstaltungsort. Damit gilt für alle drei Städte **19 % deutsche
-Umsatzsteuer** — auch dann, wenn ein Teilnehmer aus dem EU-Ausland kommt.
-Kein Reverse-Charge, keine Sonderfälle.
+> **Meine frühere Aussage war falsch.** Ich hatte geschrieben, das sei „der
+> einfache Fall: 19 % deutsche Umsatzsteuer". Das galt unter der Annahme,
+> Sometra sei ein deutsches Unternehmen. Sometra ist zypriotisch. Damit ist
+> es der komplizierte Fall.
 
-Das ist der einfache Fall. Bei einem Online-Seminar an einen EU-Firmenkunden
-wäre es umgekehrt gewesen.
+Eine zypriotische Gesellschaft veranstaltet einen Präsenz-Workshop in
+Deutschland für deutsche Firmenkunden. Welche Umsatzsteuer auf die Rechnung
+gehört, hängt an einer Weiche, die ich nicht entscheiden kann:
 
-**Websuche, keine Steuerberatung.** Vor der ersten Rechnung mit dem
-Steuerberater bestätigen.
+| Einordnung | Folge |
+|---|---|
+| **Eintrittsberechtigung zu einer Veranstaltung** (Art. 53 MwStSystRL, § 3a Abs. 3 Nr. 5 UStG) | Leistungsort ist der Veranstaltungsort. **Deutsche Umsatzsteuer**, und eine zypriotische Gesellschaft braucht dafür eine **umsatzsteuerliche Registrierung in Deutschland** samt Voranmeldungen. Kein Reverse-Charge — die Regel ist von der B2B-Grundregel ausdrücklich ausgenommen |
+| **Sonstige Leistung nach der B2B-Grundregel** (Art. 44 MwStSystRL, § 3a Abs. 2 UStG) | Leistungsort ist der Sitz des Kunden. **Reverse-Charge**: Nettorechnung mit Hinweis auf die Steuerschuldnerschaft des Leistungsempfängers, keine deutsche Registrierung nötig |
+
+Ein offenes Seminar, bei dem einzelne Personen aus verschiedenen Firmen
+einen Platz kaufen, sieht der ersten Zeile sehr ähnlich. Ein Inhouse-Tag für
+ein Unternehmen der zweiten.
+
+**Das ist keine Steuerberatung, und ich kann es nicht auflösen.** Es ist
+aber die Frage, die vor dem ersten verkauften Platz beantwortet sein muss,
+weil davon abhängt:
+
+- ob eine deutsche Steuernummer gebraucht wird, und wie lange deren
+  Beantragung dauert — das kann Wochen dauern und die Termine liegen in
+  neun Wochen
+- was auf der Rechnung steht
+- **was auf der Landingpage steht.** Dort steht heute „2.356 € netto,
+  zzgl. USt.". Bei Reverse-Charge wäre das für einen deutschen Firmenkunden
+  irreführend, weil er dann keine Umsatzsteuer an Sometra zahlt, sondern
+  selbst abführt
+
+Zufällig hilft eine Kleinigkeit: Zypern und Deutschland haben beide 19 %
+Regelsteuersatz. Optisch fällt der Unterschied nicht auf. Rechtlich ist er
+trotzdem da.
+
+**Nächster Schritt: mit dem Steuerberater klären, ob Eintrittsberechtigung
+oder Grundregel.** Vorher keine Rechnung schreiben.
 
 ---
 
@@ -194,6 +284,12 @@ Steuerberater bestätigen.
 
 Zulässig sind nur strukturierte Formate nach EN 16931, also XRechnung oder
 ZUGFeRD. **Eine PDF-Rechnung reicht dafür nicht.**
+
+**Achtung, seit dem Hinweis auf die zypriotische Gesellschaft unklar:**
+Die deutsche E-Rechnungspflicht knüpft an die Ansässigkeit im Inland an.
+Eine zypriotische Gesellschaft ohne deutsche Betriebsstätte fällt
+voraussichtlich **nicht** darunter — dann sind die Fristen unten für Sometra
+gegenstandslos. Gehört in dieselbe Frage an den Steuerberater.
 
 **Für Sometra konkret** (Stand 27.08.: Jahresumsatz unter 60.000 €):
 
