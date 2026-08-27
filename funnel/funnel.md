@@ -1,5 +1,11 @@
 # Funnel: kostenloser Content → Workshop → Retainer
 
+> **Überholt seit 2026-08-27.** Der Workshop läuft in Präsenz in Hamburg, Köln
+> und München, im November 2026, zu 2.356 € je Person. Rahmen und Rechnung:
+> `entscheidungen/2026-08-27_f2f-drei-staedte.md`, Ablauf:
+> `schulung/tagesplan-f2f.md`. Dieses Dokument bleibt als Herleitung stehen —
+> die Preise und das Remote-Format unten gelten nicht mehr.
+
 Datum: 2026-08-27
 Status: Vorschlag zur Freigabe. Ersetzt die Leiter S1/S2 aus
 `angebot/preise-und-retainer.md`.

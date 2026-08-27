@@ -1,0 +1,566 @@
+<title>Fünf Vertriebsagenten</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+
+<style>
+:root{
+  --ground:#F4F7FC; --surface:#FFFFFF; --surface-2:#E8ECF2;
+  --ink:#14354D; --ink-2:#4A6580; --ink-3:#7C90A8;
+  --line:#D8E2EE; --line-soft:#E6EDF5;
+  --accent:#C65D3D; --accent-text:#A0452B; --accent-solid:#B04E31; --accent-on:#FFFFFF;
+  --blue:#2176AE;
+  --band:#14354D; --band-ink:#FFFFFF; --band-ink-2:#C2DCF0; --band-line:#2A5372; --band-card:#1C4F70;
+  --shadow:0 1px 2px rgba(20,53,77,.06), 0 8px 24px rgba(20,53,77,.07);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0B1B27; --surface:#12293A; --surface-2:#183446;
+    --ink:#E9F1F8; --ink-2:#AFC4D6; --ink-3:#8A9BB5;
+    --line:#25486A; --line-soft:#1D3B55;
+    --accent:#E07A57; --accent-text:#E58C6C; --accent-solid:#C1573A; --accent-on:#FFFFFF;
+    --blue:#5AA5DA;
+    --band:#0E2434; --band-ink:#FFFFFF; --band-ink-2:#C2DCF0; --band-line:#28506F; --band-card:#17394F;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0B1B27; --surface:#12293A; --surface-2:#183446;
+  --ink:#E9F1F8; --ink-2:#AFC4D6; --ink-3:#8A9BB5;
+  --line:#25486A; --line-soft:#1D3B55;
+  --accent:#E07A57; --accent-text:#E58C6C; --accent-solid:#C1573A; --accent-on:#FFFFFF;
+  --blue:#5AA5DA;
+  --band:#0E2434; --band-ink:#FFFFFF; --band-ink-2:#C2DCF0; --band-line:#28506F; --band-card:#17394F;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  font-size:17px; line-height:1.62; -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.display{font-family:Montserrat,"Segoe UI",system-ui,sans-serif; text-wrap:balance; margin:0}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+
+.wrap{max-width:1080px; margin:0 auto; padding:0 28px}
+.col{max-width:660px}
+section{padding:76px 0}
+.band{background:var(--band); color:var(--band-ink)}
+.band h2{color:var(--band-ink)}
+.band p{color:var(--band-ink-2)}
+
+.eyebrow{
+  font-family:"IBM Plex Mono",monospace; font-size:12.5px; font-weight:500;
+  letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3); margin:0 0 18px
+}
+.band .eyebrow{color:var(--band-ink-2); opacity:.85}
+h2{font-size:clamp(27px,3.4vw,38px); font-weight:800; letter-spacing:-.015em; line-height:1.18; margin:0 0 18px}
+h3{font-size:19px; font-weight:700; letter-spacing:-.005em; margin:0 0 8px}
+p{margin:0 0 16px}
+.lead{font-size:19.5px; color:var(--ink-2)}
+.band .lead{color:var(--band-ink-2)}
+.small{font-size:15px; color:var(--ink-2)}
+
+/* ---------- Hero ---------- */
+.hero{background:var(--band); color:var(--band-ink); padding:88px 0 0; position:relative; overflow:hidden}
+.hero::before{
+  content:""; position:absolute; left:0; top:0; bottom:0; width:5px; background:var(--accent);
+}
+.hero .eyebrow{display:flex; flex-wrap:wrap; gap:8px 18px; align-items:center}
+.hero .eyebrow span{color:var(--band-ink)}
+.hero h1{
+  font-size:clamp(34px,5.6vw,62px); font-weight:900; line-height:1.06;
+  letter-spacing:-.028em; margin:0 0 22px; color:#fff; max-width:16ch;
+}
+.hero h1 em{font-style:normal; color:var(--accent); }
+.hero .lead{max-width:52ch; font-size:20px; margin-bottom:34px}
+
+/* Zeit-Schiene */
+.rail{
+  display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:16px;
+  border-top:1px solid var(--band-line); border-bottom:1px solid var(--band-line);
+  padding:20px 0; margin:0 0 34px; max-width:640px;
+}
+.rail .t{font-family:"IBM Plex Mono",monospace; font-size:22px; font-weight:600; color:var(--band-ink); font-variant-numeric:tabular-nums}
+.rail .t.end{color:var(--accent)}
+.rail .track{height:2px; background:linear-gradient(90deg,var(--band-line),var(--accent)); border-radius:2px}
+.rail-note{font-family:"IBM Plex Mono",monospace; font-size:12.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--band-ink-2); margin:-20px 0 34px}
+
+.cta-row{display:flex; flex-wrap:wrap; gap:14px 20px; align-items:center; padding-bottom:56px}
+.btn{
+  display:inline-block; background:var(--accent-solid); color:var(--accent-on);
+  font-family:Montserrat,sans-serif; font-weight:700; font-size:16.5px; letter-spacing:.005em;
+  text-decoration:none; padding:15px 30px; border-radius:3px; border:1px solid transparent;
+  transition:transform .15s ease, background .15s ease;
+}
+.btn:hover{background:var(--accent); transform:translateY(-1px)}
+.btn:focus-visible{outline:3px solid var(--band-ink-2); outline-offset:3px}
+.btn-ghost{
+  background:transparent; color:var(--band-ink); border:1px solid var(--band-line);
+}
+.btn-ghost:hover{background:rgba(255,255,255,.06)}
+.price-inline{font-family:"IBM Plex Mono",monospace; font-size:14px; color:var(--band-ink-2)}
+
+/* ---------- Agenten-Kette ---------- */
+.chain{display:grid; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:4px; overflow:hidden; margin-top:34px}
+.chain .row{
+  background:var(--surface); display:grid; grid-template-columns:64px 1fr; gap:0 22px; padding:22px 26px; align-items:start;
+}
+.chain .n{
+  font-family:"IBM Plex Mono",monospace; font-size:13px; font-weight:600; letter-spacing:.08em;
+  color:var(--accent-text); padding-top:3px;
+}
+.chain .verb{
+  font-family:"IBM Plex Mono",monospace; font-size:11.5px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--ink-3); display:block; margin-bottom:5px;
+}
+.chain p{margin:0; color:var(--ink-2); font-size:16px}
+
+/* ---------- Fahrplan ---------- */
+.plan{border-top:1px solid var(--band-line); margin-top:34px}
+.plan .r{
+  display:grid; grid-template-columns:96px 1fr; gap:0 24px;
+  border-bottom:1px solid var(--band-line); padding:18px 0; align-items:baseline;
+}
+.plan .time{
+  font-family:"IBM Plex Mono",monospace; font-size:15px; font-weight:600; color:var(--band-ink);
+  font-variant-numeric:tabular-nums; letter-spacing:.02em;
+}
+.plan .what{color:var(--band-ink); font-weight:600; font-size:17px; margin:0}
+.plan .what small{display:block; font-weight:400; font-size:15px; color:var(--band-ink-2); margin-top:5px; line-height:1.55}
+.plan .pause{opacity:.5}
+.plan .pause .what{font-weight:400; font-size:15px}
+.plan .fin .time,.plan .fin .what{color:var(--accent)}
+.plan .fin .what small{color:var(--band-ink-2)}
+.dur{
+  float:right; font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--band-ink-2);
+  letter-spacing:.08em; opacity:.75;
+}
+
+/* ---------- Karten ---------- */
+.cards{display:grid; gap:20px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); margin-top:34px}
+.card{
+  background:var(--surface); border:1px solid var(--line); border-radius:4px; padding:26px;
+  box-shadow:var(--shadow);
+}
+.card .city{font-family:Montserrat,sans-serif; font-weight:800; font-size:24px; letter-spacing:-.01em; margin:0 0 6px}
+.card .date{font-family:"IBM Plex Mono",monospace; font-size:14.5px; color:var(--accent-text); font-weight:500; letter-spacing:.02em}
+.card .meta{font-size:14.5px; color:var(--ink-3); margin:14px 0 0; font-family:"IBM Plex Mono",monospace; letter-spacing:.02em}
+
+.two{display:grid; gap:34px; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); margin-top:30px}
+.tick{list-style:none; padding:0; margin:0; display:grid; gap:11px}
+.tick li{padding-left:26px; position:relative; color:var(--ink-2); font-size:16.5px}
+.tick li::before{
+  content:""; position:absolute; left:0; top:.62em; width:9px; height:9px; border-radius:1px;
+  background:var(--accent);
+}
+.tick.no li::before{background:transparent; border:1px solid var(--ink-3)}
+
+/* ---------- Garantie ---------- */
+.guarantee{
+  background:var(--surface); border:1px solid var(--line); border-left:5px solid var(--accent);
+  border-radius:3px; padding:34px 36px; box-shadow:var(--shadow); margin-top:8px;
+}
+.guarantee blockquote{
+  margin:0 0 16px; font-family:Montserrat,sans-serif; font-weight:700; font-size:clamp(20px,2.5vw,26px);
+  line-height:1.34; letter-spacing:-.012em;
+}
+
+/* ---------- Preis ---------- */
+.pricebox{
+  background:var(--band-card); color:var(--band-ink); border-radius:4px; padding:32px 34px;
+  display:grid; gap:6px; align-content:start;
+}
+.pricebox .amount{font-family:Montserrat,sans-serif; font-weight:900; font-size:44px; letter-spacing:-.03em; line-height:1}
+.pricebox .per{font-family:"IBM Plex Mono",monospace; font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:var(--band-ink-2)}
+.incl{list-style:none; padding:0; margin:20px 0 0; display:grid; gap:9px}
+.incl li{font-size:15.5px; color:var(--band-ink-2); padding-left:22px; position:relative}
+.incl li::before{content:"—"; position:absolute; left:0; color:var(--accent)}
+
+/* ---------- FAQ ---------- */
+.faq{margin-top:30px; border-top:1px solid var(--line)}
+details{border-bottom:1px solid var(--line)}
+summary{
+  cursor:pointer; padding:19px 30px 19px 0; font-family:Montserrat,sans-serif; font-weight:700;
+  font-size:17.5px; list-style:none; position:relative;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{
+  content:"+"; position:absolute; right:4px; top:17px; font-family:"IBM Plex Mono",monospace;
+  font-size:20px; color:var(--accent-text); font-weight:400;
+}
+details[open] summary::after{content:"−"}
+summary:focus-visible{outline:2px solid var(--blue); outline-offset:2px}
+details p{padding:0 30px 20px 0; margin:0; color:var(--ink-2); font-size:16.5px}
+
+/* ---------- Über / Fuß ---------- */
+.about{display:grid; grid-template-columns:auto 1fr; gap:0 28px; align-items:start}
+.sig{
+  font-family:Montserrat,sans-serif; font-weight:900; font-size:15px; letter-spacing:.02em;
+  writing-mode:vertical-rl; transform:rotate(180deg); color:var(--accent); padding-top:4px;
+}
+footer{background:var(--band); color:var(--band-ink-2); padding:56px 0 44px; font-size:14.5px}
+footer a{color:var(--band-ink)}
+.foot-row{display:flex; flex-wrap:wrap; gap:14px 32px; justify-content:space-between; align-items:baseline}
+.logo{font-family:Montserrat,sans-serif; font-weight:900; font-size:19px; letter-spacing:.04em; color:#fff}
+
+.reveal{opacity:0; transform:translateY(14px); transition:opacity .55s ease, transform .55s ease}
+.reveal.in{opacity:1; transform:none}
+@media (prefers-reduced-motion: reduce){
+  .reveal{opacity:1; transform:none; transition:none}
+  .btn{transition:none}
+}
+@media (max-width:640px){
+  section{padding:56px 0}
+  .chain .row{grid-template-columns:44px 1fr; padding:20px 18px; gap:0 14px}
+  .plan .r{grid-template-columns:82px 1fr; gap:0 16px}
+  .about{grid-template-columns:1fr}
+  .sig{writing-mode:horizontal-tb; transform:none; margin-bottom:10px}
+  .dur{float:none; display:block; margin-top:6px}
+}
+</style>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow"><span>Hamburg 10.11.</span> · <span>Köln 17.11.</span> · <span>München 24.11.2026</span></p>
+    <h1>Um 17:00 Uhr laufen fünf Vertriebsagenten in <em>Ihrem</em> Konto.</h1>
+    <p class="lead">Mit Ihren Daten. Für Ihre Kunden. Sie bauen sie an diesem Tag selbst — Schritt für Schritt, mit mir daneben.</p>
+
+    <div class="rail">
+      <span class="t mono">09:00</span>
+      <span class="track"></span>
+      <span class="t end mono">17:00</span>
+    </div>
+    <p class="rail-note">Ein Tag · Präsenz · max. 12 Teilnehmer</p>
+
+    <div class="cta-row">
+      <a class="btn" href="#termine">Platz sichern</a>
+      <a class="btn btn-ghost" href="#tag">Den Tag ansehen</a>
+      <span class="price-inline">2.356 € zzgl. USt. · Geld zurück, wenn nichts läuft</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ WAS SIE MITNEHMEN ============ -->
+<section>
+  <div class="wrap">
+    <div class="col">
+      <p class="eyebrow">Was Sie abends dabeihaben</p>
+      <h2>Nicht Notizen. Fünf Agenten, die am Montag weiterlaufen.</h2>
+      <p class="lead">Die fünf sind keine fünf Spielereien. Sie sind ein Ablauf — und jeder übergibt an den nächsten.</p>
+    </div>
+
+    <div class="chain">
+      <div class="row">
+        <div class="n mono">01</div>
+        <div>
+          <span class="verb">finden</span>
+          <h3>Such- und Finde-Agent</h3>
+          <p>Findet Entscheider nach Kriterien, die Sie an diesem Tag selbst festlegen: Rollen, Region, Branche. Und legt sie strukturiert ab, damit Sie am Montag nicht wieder bei null anfangen.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="n mono">02</div>
+        <div>
+          <span class="verb">prüfen</span>
+          <h3>Prüf-Agent</h3>
+          <p>Sortiert aus, bevor jemand angeschrieben wird: Dubletten, unpassende Rollen, Firmen, die nicht zu Ihnen passen. Der unscheinbarste Agent — und der, der Ihnen am meisten Zeit spart.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="n mono">03</div>
+        <div>
+          <span class="verb">ansprechen</span>
+          <h3>DM-Schreibe-Agent</h3>
+          <p>Schreibt die erste Nachricht aus dem Profil heraus, nicht aus einer Vorlage. Hier lernen Sie den wichtigsten Handgriff des Tages: wie Sie einem Agenten Ihre Tonalität beibringen.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="n mono">04</div>
+        <div>
+          <span class="verb">nachfassen</span>
+          <h3>Follow-up-Agent</h3>
+          <p>Erkennt, wer wartet, und entwirft die Folgenachricht aus dem bisherigen Verlauf — damit kein Gespräch einschläft, weil es untergegangen ist.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="n mono">05</div>
+        <div>
+          <span class="verb">sichtbar bleiben</span>
+          <h3>Content-Agent</h3>
+          <p>Recherchiert Themen, bewertet sie nach Relevanz und gibt sie plattformgerecht aus. Ein Kern, zwei Ausgabezweige — nicht vier Agenten für vier Kanäle.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIE REGEL ============ -->
+<section class="band">
+  <div class="wrap">
+    <div class="col">
+      <p class="eyebrow">Die Regel, die durch den ganzen Tag geht</p>
+      <h2>Kein Agent klickt auf Senden.</h2>
+      <p class="lead">Jeder Agent recherchiert, bewertet, bereitet vor — und legt Ihnen vor. Sie prüfen und lösen aus.</p>
+      <p>Das ist keine Einschränkung, sondern die Konstruktionsregel. Zwei Gründe, und Sie hören beide am Vormittag: Netzwerke wie LinkedIn beschränken Konten, die automatisiert bedient werden. Und eine Nachricht, die ungeprüft rausgeht, ist irgendwann die falsche Nachricht an den falschen Kunden.</p>
+      <p>Wer Ihnen das Gegenteil beibringt, riskiert Ihr Konto.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DER TAG ============ -->
+<section class="band" id="tag" style="padding-top:0">
+  <div class="wrap">
+    <div class="col">
+      <p class="eyebrow">Der Ablauf</p>
+      <h2>Vormittags verstehen Sie es. Nachmittags läuft es.</h2>
+      <p class="lead">345 Minuten Lernzeit. Kein Block ist gestreckt, damit die Rechnung aufgeht.</p>
+    </div>
+
+    <div class="plan reveal">
+      <div class="r">
+        <div class="time">09:00</div>
+        <p class="what">Grundlagen <span class="dur">90 MIN</span>
+          <small>Was Code ist und was ein Agent ist. Claude und Codex — was welches kann und wann Sie welches brauchen. Cowork, Artefakte, Skills. Connectoren, MCPs und APIs: die Ebene, an der es in der Praxis scheitert.</small>
+        </p>
+      </div>
+      <div class="r pause">
+        <div class="time">10:30</div>
+        <p class="what">Frühstückspause <span class="dur">30 MIN</span></p>
+      </div>
+      <div class="r">
+        <div class="time">11:00</div>
+        <p class="what">Agent 1 — Such- und Finde-Agent <span class="dur">105 MIN</span>
+          <small>Der lange Block, und der einzige, der so lang sein muss. Hier entsteht das Muster, das die anderen vier wiederverwenden: Zielbild, Rollen, Prüfkriterien, Ablage in Airtable oder Excel, erster Lauf.</small>
+        </p>
+      </div>
+      <div class="r pause">
+        <div class="time">12:45</div>
+        <p class="what">Mittagspause <span class="dur">60 MIN</span></p>
+      </div>
+      <div class="r">
+        <div class="time">13:45</div>
+        <p class="what">Agent 2 und Agent 3 <span class="dur">90 MIN</span>
+          <small>Prüf-Agent auf Ihrem eigenen Bestand vom Vormittag. Danach der DM-Schreibe-Agent — mit drei eigenen Nachrichten als Maßstab, an dem er gemessen wird.</small>
+        </p>
+      </div>
+      <div class="r pause">
+        <div class="time">15:15</div>
+        <p class="what">Kaffeepause <span class="dur">45 MIN</span></p>
+      </div>
+      <div class="r">
+        <div class="time">16:00</div>
+        <p class="what">Agent 4, Agent 5 und Zusammenschalten <span class="dur">60 MIN</span>
+          <small>Follow-up und Content bauen auf dem auf, was schon steht. Zum Schluss: die fünf als ein Ablauf — und was in den ersten zwei Wochen kaputtgeht, bevor es kaputtgeht.</small>
+        </p>
+      </div>
+      <div class="r fin">
+        <div class="time">17:00</div>
+        <p class="what">Fünf Agenten laufen
+          <small>Bei Ihnen. In Ihrem Konto. Geprüft, nicht behauptet.</small>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FÜR WEN ============ -->
+<section>
+  <div class="wrap">
+    <div class="col">
+      <p class="eyebrow">Für wen der Tag gebaut ist</p>
+      <h2>Für Menschen, die es schon einmal selbst probiert haben.</h2>
+    </div>
+    <div class="two">
+      <div>
+        <h3>Sie sind hier richtig, wenn</h3>
+        <ul class="tick">
+          <li>Sie Geschäftsführer, Vertriebs- oder Marketingleiter im B2B-Mittelstand sind</li>
+          <li>Sie KI schon ausprobiert haben und irgendwo steckengeblieben sind</li>
+          <li>Sie sagen können, welche Kunden Sie suchen</li>
+          <li>Sie einen Tag freiräumen können — und danach selbst weitermachen wollen</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Sie sind hier falsch, wenn</h3>
+        <ul class="tick no">
+          <li>Sie einen Überblicksvortrag über KI suchen</li>
+          <li>Sie möchten, dass jemand das für Sie einrichtet und Sie es danach nicht anfassen</li>
+          <li>Sie erwarten, dass ein Agent selbstständig Nachrichten verschickt</li>
+          <li>Sie garantierte Umsatzzahlen erwarten. Die bekommen Sie hier nicht</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GARANTIE ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="col">
+      <p class="eyebrow">Die Garantie</p>
+    </div>
+    <div class="guarantee col">
+      <blockquote>Wenn am Ende des Tages kein einziger Agent bei Ihnen läuft, bekommen Sie den vollen Preis zurück. Ohne Diskussion.</blockquote>
+      <p class="small">Bedingung, offen genannt: Sie waren da und haben mitgebaut.</p>
+      <p class="small">Warum so und nicht als Zufriedenheitsgarantie: „Wenn es Ihnen nicht gefällt" ist Geschmackssache. „Es läuft oder es läuft nicht" ist überprüfbar — und das prüfen wir noch im Raum, an jedem Platz.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TERMINE & PREIS ============ -->
+<section class="band" id="termine">
+  <div class="wrap">
+    <div class="col">
+      <p class="eyebrow">Termine</p>
+      <h2>Drei Städte. Drei Termine. Je zwölf Plätze.</h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <p class="city">Hamburg</p>
+        <p class="date mono">Dienstag, 10.11.2026</p>
+        <p class="meta">09:00–17:00 UHR<br>12 PLÄTZE</p>
+      </div>
+      <div class="card">
+        <p class="city">Köln</p>
+        <p class="date mono">Dienstag, 17.11.2026</p>
+        <p class="meta">09:00–17:00 UHR<br>12 PLÄTZE</p>
+      </div>
+      <div class="card">
+        <p class="city">München</p>
+        <p class="date mono">Dienstag, 24.11.2026</p>
+        <p class="meta">09:00–17:00 UHR<br>12 PLÄTZE</p>
+      </div>
+    </div>
+
+    <div class="cards" style="margin-top:20px">
+      <div class="pricebox">
+        <span class="amount">2.356 €</span>
+        <span class="per">je Person · zzgl. USt.</span>
+        <ul class="incl">
+          <li>Ein voller Tag, max. 12 Teilnehmer</li>
+          <li>Frühstück, Mittagessen, Kaffee</li>
+          <li>Alle Vorlagen und Anleitungen zum Nachbauen</li>
+          <li>Ihre Unterlagen und der nächste Schritt, zwei Werktage später per Mail</li>
+          <li>Nachfrage nach vier Wochen: Was läuft noch?</li>
+        </ul>
+      </div>
+      <div style="display:grid; align-content:center; gap:18px">
+        <p class="lead" style="margin:0">Technik-Check per Mail drei Tage vorher, mit Bestätigung zurück. Damit am Morgen keine 45 Minuten für Zugänge draufgehen.</p>
+        <div><a class="btn" href="#anmeldung">Platz sichern</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VORAUSSETZUNGEN ============ -->
+<section>
+  <div class="wrap">
+    <div class="col">
+      <p class="eyebrow">Was Sie mitbringen</p>
+      <h2>Vier Dinge. Sonst nichts.</h2>
+      <ul class="tick" style="margin-top:26px">
+        <li><strong>Einen eigenen Laptop.</strong> Keinen Firmenrechner, auf dem nichts installiert werden darf</li>
+        <li><strong>Ein bezahltes Konto bei Claude oder ChatGPT</strong>, vor dem Workshop eingerichtet</li>
+        <li><strong>Ihr LinkedIn-Konto</strong>, eingeloggt</li>
+        <li><strong>Airtable oder Excel.</strong> Beide Wege werden gezeigt, Sie entscheiden am Tag</li>
+      </ul>
+      <p class="small" style="margin-top:24px">Programmieren müssen Sie nicht. Keine Zeile.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="col">
+      <p class="eyebrow">Bevor Sie fragen</p>
+      <h2>Was Teilnehmer vorher wissen wollen</h2>
+      <div class="faq">
+        <details>
+          <summary>Ich kann nicht programmieren. Reicht das?</summary>
+          <p>Ja. Sie schreiben Anweisungen in Ihrer Sprache, nicht in Code. Was Code ist, erfahren Sie am Vormittag — damit Sie einschätzen können, was da passiert. Schreiben müssen Sie keinen.</p>
+        </details>
+        <details>
+          <summary>Wir haben schon Software eingeführt, die dann keiner genutzt hat.</summary>
+          <p>Genau deshalb bauen Sie hier selbst, statt zuzusehen. Was Sie an diesem Tag gebaut haben, verstehen Sie — und können es ändern, wenn sich etwas ändert. Und wir prüfen noch im Raum, ob es bei Ihnen läuft, nicht erst zuhause.</p>
+        </details>
+        <details>
+          <summary>Verschickt der Agent dann automatisch Nachrichten?</summary>
+          <p>Nein. Kein Agent klickt auf Senden — das ist die Konstruktionsregel des ganzen Tages. Jeder Agent legt Ihnen einen Entwurf vor. Sie lesen, ändern, senden.</p>
+        </details>
+        <details>
+          <summary>Ist mein LinkedIn-Konto dabei in Gefahr?</summary>
+          <p>Aus genau diesem Grund gibt es die Regel oben. Netzwerke beschränken Konten, die automatisiert bedient werden. Was Sie hier bauen, recherchiert und bereitet vor — bedient aber nicht selbstständig Ihr Konto.</p>
+        </details>
+        <details>
+          <summary>Wir arbeiten mit Excel, nicht mit Airtable.</summary>
+          <p>Beide Wege werden gezeigt, und Sie entscheiden am Tag. Excel ist bei Ihnen schon da und funktioniert. Airtable kostet zehn Minuten Einrichtung und macht die Agenten 2 bis 5 etwas kürzer. Umsteigen geht später in beide Richtungen.</p>
+        </details>
+        <details>
+          <summary>Was passiert, wenn ich in einem Schritt hängenbleibe?</summary>
+          <p>Dann komme ich an Ihren Platz. Zwölf Teilnehmer sind genau die Zahl, bei der das an einem Tag geht. Kein Block endet, bevor er bei allen läuft.</p>
+        </details>
+        <details>
+          <summary>Was kommt nach dem Tag?</summary>
+          <p>Zwei Werktage später bekommen Sie Ihre Unterlagen, die Anleitungen zum Erweitern und einen konkreten nächsten Schritt. Nach vier Wochen frage ich nach, was noch läuft und was eingeschlafen ist. Wer danach Begleitung möchte, bekommt ein Angebot — muss aber nicht.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ÜBER ============ -->
+<section class="band">
+  <div class="wrap">
+    <div class="col about">
+      <div class="sig">sometra</div>
+      <div>
+        <p class="eyebrow">Wer den Tag hält</p>
+        <h2>Mariana Theux</h2>
+        <p class="lead">Ich führe KI in Vertrieb und Marketing im DACH-Mittelstand ein — und zwar so, dass sie nach meinem Abgang noch benutzt wird.</p>
+        <p>Die fünf Agenten, die Sie an diesem Tag bauen, laufen bei mir selbst. Ich zeige Ihnen keinen Prototyp, sondern das, womit ich arbeite — samt der Stellen, an denen es hakt.</p>
+        <p>Reale Nutzung vor Tool-Begeisterung. Kein Clickbait, kein Versprechen, das nicht gedeckt ist.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABSCHLUSS ============ -->
+<section id="anmeldung">
+  <div class="wrap">
+    <div class="col">
+      <p class="eyebrow">Anmeldung</p>
+      <h2>Zwölf Plätze je Stadt. Danach ist der Termin zu.</h2>
+      <p class="lead">Schreiben Sie mir, in welcher Stadt Sie dabei sein wollen. Sie bekommen die Rechnung, den Raum und den Technik-Check.</p>
+      <div class="cta-row" style="padding-bottom:0">
+        <a class="btn" href="mailto:mail@sometra.de?subject=Workshop%20Vertriebsagenten%20—%20Platz%20sichern">Platz sichern</a>
+        <span class="price-inline" style="color:var(--ink-3)">2.356 € zzgl. USt. · Geld zurück, wenn nichts läuft</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-row">
+    <span class="logo">sometra</span>
+    <span>So bauen Sie sich Ihre Vertriebsagenten — Hamburg, Köln, München · November 2026</span>
+    <span><a href="mailto:mail@sometra.de">mail@sometra.de</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    els.forEach(function(e){ e.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, {threshold:0.12});
+  els.forEach(function(e){ io.observe(e); });
+})();
+</script>

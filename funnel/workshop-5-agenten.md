@@ -1,5 +1,10 @@
 # Workshop "5 Agenten" — Inhalt und Ablauf
 
+> **Überholt seit 2026-08-27.** Der Tagesablauf unten war für ein
+> Remote-Format gerechnet. Gültig ist `schulung/tagesplan-f2f.md`
+> (Präsenz, 09:00–17:00, 345 Min Lernzeit). Die fünf Agenten und die
+> Konstruktionsregel gelten unverändert weiter.
+
 Ein Tag. Live. Max. 12 Teilnehmer.
 Datum: 2026-08-27. Status: Vorschlag zur Freigabe.
 
