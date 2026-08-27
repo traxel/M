@@ -1,59 +1,76 @@
 # Produktionsablauf je Einheit
 
-Stand: 2026-08-27. Gilt für die drei Einheiten vor der Terminbekanntgabe:
-Watchdog Frühcheck, Versand, Recherche.
+Stand: 2026-08-27, zweite Fassung.
+Erste Fassung war an zwei Stellen falsch — siehe unten.
 
 ---
 
-## Die sieben Schritte
+## Was an der ersten Fassung nicht stimmte
+
+**1. „Schnitt — Descript" war ungeprüft.**
+Nachgelesen im Werkzeug-Schema des verbundenen Connectors:
+`prompt_project_agent` nimmt **Anweisungen in natürlicher Sprache** entgegen
+und arbeitet auf einem Projekt, in das vorher Material importiert wurde.
+
+Es kann also schneiden — aber **nur, was man ihm sagt.** „Schneide das gut"
+ist keine Anweisung. Das Werkzeug weiß nicht, welcher Take gilt, wo ein
+Screen-Recording einsetzt, wo eine Pause raus soll.
+
+**Das ist keine Werkzeugfrage, sondern eine Regiefrage.** Sie gehört ins
+Drehbuch, nicht in den Schnitt. Wenn im Drehbuch steht, was wann zu sehen
+ist, kann Descript es umsetzen. Sonst nicht.
+
+**2. „Aufnehmen" ist kein Schritt.**
+Ein Video über den Watchdog braucht mehrere Aufnahmen:
+
+- Talking Head — du vor der Kamera
+- Terminal mit dem laufenden Agenten
+- Airtable mit den Herzschlag-Zeitstempeln
+- gegebenenfalls CoWork, Codex oder Claude Code als Oberfläche
+
+Vier bis sechs getrennte Aufnahmen je Einheit, jede mit eigener Vorgabe:
+was ist zu sehen, was passiert darin, wie lang, an welcher Stelle im Skript.
+
+Das stand in der ersten Fassung als eine Zeile. Falsch.
+
+---
+
+## Korrigierter Ablauf
 
 | # | Schritt | Wer | Ergebnis |
 |---|---|---|---|
-| 1 | Genre und Titel festlegen | ich schlage vor, **du wählst** | ein Titel |
-| 2 | Story-Spine schreiben und locken | ich schreibe, **du gibst frei** | Kausalkette in deinen Worten |
-| 3 | Skript, ~500–700 Wörter | ich | Sprechtext, 5–7 Min bei 100 WpM |
-| 4 | Aufnahme-Drehbuch | ich | Klick für Klick, was am Screen passiert |
-| 5 | **Aufnehmen** | **du** | Screen-Recording + Sprechtext |
-| 6 | Schnitt | Descript | Rohschnitt |
-| 7 | Thumbnail | ich baue, **du renderst** | PNG 1280×720 |
+| 1 | Genre und Titel | ich schlage vor, **du wählst** | ein Titel |
+| 2 | Story-Spine, gelockt | ich schreibe, **du gibst frei** | Kausalkette |
+| 3 | Skript, 500–700 Wörter | ich | Sprechtext |
+| 4 | **Visual-Regie je Beat** | ich, über `visual-regie` | je Beat: Talking Head, Screen, HyperFrame oder Kling |
+| 5 | **Aufnahmeliste** | ich | 4–6 einzelne Aufnahmen, je mit Inhalt, Dauer, Reihenfolge |
+| 6 | **Aufnehmen** | **du** | die Dateien aus Schritt 5 |
+| 7 | Schnittanweisung | ich | welcher Take wann, was raus, wo Screens liegen |
+| 8 | Schnitt | Descript, nach Schritt 7 | Rohschnitt |
+| 9 | Thumbnail | ich baue, **du renderst** | PNG 1280×720 |
 
-Schritt 5 ist der einzige, den niemand außer dir machen kann.
-Alles davor ist Vorbereitung, alles danach Nachbereitung.
-
----
-
-## Was parallel läuft
-
-**Ich, ohne auf dich zu warten:** Titel, Spine, Skript und Drehbuch für alle
-drei Einheiten. Dazu die LinkedIn-Posts aus demselben Kern.
-
-**Du, ohne auf mich zu warten:**
-1. **Testansicht in Airtable** mit erfundenen Datensätzen — rund eine Stunde.
-   Blockiert jede Aufnahme, weil in der echten Tabelle Namen, Firmen und
-   E-Mail-Adressen realer Personen stehen.
-2. **Drehtag im Kalender** blocken. Drei Einheiten an einem Tag.
-
-Beides ist unabhängig voneinander. Fang mit den Testdaten an.
+Neu gegenüber der ersten Fassung: Schritt 4, 5 und 7.
+Ohne 5 weißt du nicht, was du aufnehmen sollst. Ohne 7 weiß Descript nicht,
+was es schneiden soll.
 
 ---
 
-## Die Gates
+## Was ich noch nicht weiß — und was den Ablauf ändert
 
-Nur zwei Stellen, an denen ich auf dich warte:
+| Frage | Warum sie zählt |
+|---|---|
+| **Womit nimmst du Screen auf?** | Bestimmt Auflösung, Format und ob Mauszeiger und Klicks sichtbar sind |
+| **Womit nimmst du dich selbst auf?** | Kamera, Licht, Ton — bestimmt, ob Talking Head und Screen getrennt oder gleichzeitig laufen |
+| **Schneidest du überhaupt in Descript?** | Der Connector ist verbunden, aber ob du damit arbeitest, weiß ich nicht |
+| **Wie kommt lokales Material nach Descript?** | `import_media` nimmt URLs oder Direkt-Upload. Von hier komme ich an deine Dateien nicht heran — das müsste die lokale Session oder du selbst machen |
 
-- **Nach Schritt 1:** Titel gewählt
-- **Nach Schritt 2:** Spine freigegeben — „passt"
-
-Ohne diese zwei Freigaben schreibe ich kein Skript. Bricht die Logik im
-Skript, liegt es fast immer an einer nicht gelockten Kausalkette.
+Diese vier klären wir, bevor ich die Aufnahmeliste schreibe. Sonst schreibe
+ich eine Liste für ein Setup, das es nicht gibt.
 
 ---
 
-## Reihenfolge der Einheiten
+## Was davon unberührt bleibt
 
-1. **Watchdog Frühcheck** — stärkste Differenzierung, beste Geschichte
-   (die 37 Minuten mit zwei parallelen Sitzungen am 15.08.)
-2. **Versand** — das sichtbare Ergebnis
-3. **Recherche** — der Anfang der Kette
-
-Erst wenn alle drei veröffentlicht sind, kommt der Workshop-Termin raus.
+Schritt 1 bis 3 hängen an keiner dieser Fragen. Titel, Spine und Skript
+kann ich sofort bauen — die Frage, womit gefilmt wird, ändert am Sprechtext
+nichts.
